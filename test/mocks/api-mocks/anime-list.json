@@ -1,0 +1,80 @@
+{
+  "pageInfo": {
+    "total": 5000,
+    "perPage": 50
+  },
+  "media": [
+    {
+      "id": 127230,
+      "title": {
+        "romaji": "Chainsaw Man",
+        "english": "Chainsaw Man"
+      },
+      "genres": ["Action", "Comedy", "Drama", "Horror", "Supernatural"],
+      "coverImage": {
+        "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127230-FlochcFsyoF4.png"
+      },
+      "averageScore": 86
+    },
+    {
+      "id": 116674,
+      "title": {
+        "romaji": "BLEACH: Sennen Kessen-hen",
+        "english": "BLEACH: Thousand-Year Blood War"
+      },
+      "genres": ["Action", "Adventure", "Supernatural"],
+      "coverImage": {
+        "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116674-p3zK4PUX2Aag.jpg"
+      },
+      "averageScore": 89
+    },
+    {
+      "id": 21,
+      "title": {
+        "romaji": "ONE PIECE",
+        "english": "ONE PIECE"
+      },
+      "genres": ["Action", "Adventure", "Comedy", "Drama", "Fantasy"],
+      "coverImage": {
+        "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx21-tXMN3Y20PIL9.jpg"
+      },
+      "averageScore": 87
+    },
+    {
+      "id": 142838,
+      "title": {
+        "romaji": "SPY×FAMILY Part 2",
+        "english": "SPY x FAMILY Cour 2"
+      },
+      "genres": ["Action", "Comedy", "Slice of Life", "Supernatural"],
+      "coverImage": {
+        "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx142838-ECZSqfknAqAT.jpg"
+      },
+      "averageScore": 84
+    },
+    {
+      "id": 145604,
+      "title": {
+        "romaji": "Shinobi no Ittoki",
+        "english": "Shinobi no Ittoki"
+      },
+      "genres": ["Action"],
+      "coverImage": {
+        "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx145604-FQ8gN4CPaiui.jpg"
+      },
+      "averageScore": 59
+    },
+    {
+      "id": 137822,
+      "title": {
+        "romaji": "Blue Lock",
+        "english": "BLUELOCK"
+      },
+      "genres": ["Action", "Drama", "Sports"],
+      "coverImage": {
+        "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137822-4dVWMSHLpGf8.png"
+      },
+      "averageScore": 80
+    }
+  ]
+}
