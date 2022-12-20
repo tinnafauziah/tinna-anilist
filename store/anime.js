@@ -1,0 +1,50 @@
+import { gql } from 'nuxt-graphql-request';
+
+export const state = {
+  currentRoute: 'refreshedRoute',
+  lastRoute: 'refreshedRoute',
+  user: '',
+}
+export const actions = {
+  async fetchAnimeList(_, variables) {
+    const query = gql`
+      query ($page: Int, $perPage: Int, $search: String, $sort: [MediaSort], $genre_in: [String] ) {
+        Page(page: $page, perPage: $perPage) {
+          pageInfo {
+            total
+            perPage
+          }
+          media(search: $search, type: ANIME, sort: $sort, genre_in: $genre_in) {
+            id
+            title {
+              romaji
+              english
+            }
+            genres
+            coverImage {
+              large
+            }
+            averageScore
+          }
+        }
+      }
+    `;
+
+    const animes = await this.$graphql.default.request(query, variables);
+    return animes;
+  },
+  async fetchGenres(_) {
+    const query = gql`
+      query {
+        GenreCollection
+      }
+    `;
+
+    const animes = await this.$graphql.default.request(query);
+    return animes;
+  },
+}
+export default {
+  namespace: true,
+  actions,
+}

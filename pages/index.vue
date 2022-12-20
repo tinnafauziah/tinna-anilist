@@ -1,83 +1,129 @@
-<template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
-      </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+<template lang="pug">
+.index-anime
+  .display-2.mb-4 Cari Anime
+  v-layout(wrap)
+    v-flex.xs4
+      v-select(
+        v-model='selectedGenres',
+        :items='genres',
+        label='Pilih genre',
+        outlined,
+        multiple
+        )
+        template(v-slot:selection='{ item, index }')
+          v-chip(v-if='index <= 2')
+            span {{ item }}
+          span.grey--text.ml-1(v-if='index === 3') (+{{ selectedGenres.length - 4 }} others)
+    v-flex.xs4.ml-2
+      v-select(
+        v-model='selectedSort',
+        :items='sorts',
+        label='Urut berdasarkan',
+        outlined,
+        item-text='text',
+        item-value='value'
+      )
+    v-flex.ml-2
+      v-btn(color='teal accent-4', x-large, @click='fetchAnimeList()') Cari
+  v-layout(wrap)
+      v-card.mb-4.mr-4(v-for='anime in animes', width='275', :key='anime.id')
+        v-img(height='400', :src='anime.coverImage.large')
+        v-card-text
+          .subtitle-1.font-weight-bold.mb-1 {{ anime.title | animeTitle }}
+          v-layout(wrap, align-center)
+            v-flex.xs1.mr-1
+              v-icon(:color='getRatingColor(anime.averageScore)') {{ getRatingIcon(anime.averageScore) }}
+            v-flex.xs10
+              span.subtitle-1 {{ anime.averageScore | animeAverageScore }}
+        v-card-actions
+          v-btn(text, color='teal accent-4') Detail
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  data () {
+    return {
+      genres: [],
+      sorts: [
+        {
+          text: 'Trending',
+          value: 'TRENDING_DESC',
+        }
+      ],
+      rateFloorDict: {
+        81: {
+          color: 'green',
+          icon: 'mdi-emoticon-excited-outline',
+        },
+        61: {
+          color: 'yellow',
+          icon: 'mdi-emoticon-happy-outline',
+        },
+        41: {
+          color: 'lime',
+          icon: 'mdi-emoticon-neutral-outline',
+        },
+        21: {
+          color: 'orange',
+          icon: 'mdi-emoticon-sad-outline',
+        },
+        0: {
+          color: 'red',
+          icon: 'mdi-emoticon-cry-outline',
+        }
+      },
+      selectedGenres: [],
+      selectedSort: 'TRENDING_DESC',
+      animes: [],
+    }
+  },
+  async mounted() {
+    this.fetchGenres();
+    this.fetchAnimeList();
+  },
+  filters: {
+    animeTitle(title) {
+      return title?.english || title?.romaji;
+    },
+    animeAverageScore(averageScore) {
+      return averageScore || 'tidak diketahui';
+    },
+  },
+  methods: {
+    async fetchGenres() {
+      try {
+        const response = await this.$store.dispatch('anime/fetchGenres');
+        this.genres = [...this.genres, ...response.GenreCollection];
+      }
+      finally {}
+    },
+    async fetchAnimeList() {
+      let variables = {
+        sort: this.selectedSort
+      };
+
+      if(this.selectedGenres.length > 0) variables = {...variables, genre_in: this.selectedGenres}
+
+      try {
+        const response = await this.$store.dispatch('anime/fetchAnimeList', variables);
+        const { media, pageInfo } = response.Page;
+        this.animes = media;
+      } finally {}
+    },
+    getSelectedRating(averageScore) {
+      const rateFloorArray = Object.keys(this.rateFloorDict).reverse()
+      const selectedRateFloor = rateFloorArray.find(rateFloor => averageScore > Number(rateFloor));
+      return this.rateFloorDict[selectedRateFloor] || { color: 'gray', icon: 'mdi-emoticon-neutral-outline' };
+    },
+    getRatingColor(averageScore) {
+      const rate = this.getSelectedRating(averageScore);
+      return rate.color;
+    },
+    getRatingIcon(averageScore) {
+      const rate = this.getSelectedRating(averageScore);
+      return rate.icon;
+    },
+  }
 }
 </script>
