@@ -11,9 +11,9 @@
         multiple
         )
         template(v-slot:selection='{ item, index }')
-          v-chip(v-if='index <= 2')
+          v-chip(v-if='index < showedGenresLength')
             span {{ item }}
-          span.grey--text.ml-1(v-if='index === 3') (+{{ selectedGenres.length - 4 }} others)
+          span.grey--text.ml-1(v-if='index === showedGenresLength') (+{{ selectedGenres.length - showedGenresLength }} lainnya)
     v-flex.xs4.ml-2
       v-select(
         v-model='selectedSort',
@@ -68,6 +68,7 @@ export default {
       isFirstLoading: false,
       isLazyLoading: false,
       hasNextPage: false,
+      showedGenresLength: 3,
       sorts: [
         {
           text: 'Trending',
