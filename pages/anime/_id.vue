@@ -1,7 +1,11 @@
 <template lang="pug">
 .detail-anime
-  v-layout(wrap)
-    template(v-if='isLoadingMedia')
+  template(v-if='isLoadingMedia')
+    v-skeleton-loader.mb-3(
+      class='mx-auto',
+      type='button'
+    )
+    v-layout(wrap)
       v-flex.xs3.mr-3
         v-skeleton-loader(
           class='mx-auto',
@@ -20,13 +24,15 @@
           class='mx-auto',
           type='paragraph'
         )
-    template(v-else-if='errorMessage')
-      v-flex
-        .display-1 {{ errorMessage }}
-        .subtitle-1 Please return to
-          span &nbsp;
-            NuxtLink(to='/') Home page
-    template(v-else)
+  template(v-else-if='errorMessage')
+    .display-1 {{ errorMessage }}
+    .subtitle-1 Please return to
+      span &nbsp;
+        NuxtLink(to='/') Home page
+  template(v-else)
+    v-btn.mb-3(color='teal accent-4', @click='addBookmarkedAnime()') Add to bookmarked
+    v-snackbar(v-model="snackbar") Aksi berhasil diproses
+    v-layout(wrap)
       v-flex.xs3.mr-3
         v-img(:src='media.coverImage.extraLarge')
         v-layout(wrap, align-center)
@@ -37,56 +43,69 @@
       v-flex.xs6
         .title {{ media.title | animeTitle  }}
         .subtitle-1(v-html='media.description')
+        //- v-chip(v-for=''')
 </template>
 
 <script>
-import humanizeAnimeString from '~/mixins/humanize-anime-string';
+import humanizeAnimeString from "~/mixins/humanize-anime-string";
 
 export default {
-  name: 'DetailPage',
+  name: "DetailPage",
   mixins: [humanizeAnimeString],
-  data () {
+  data() {
     return {
       media: {
         coverImage: {
-          extraLarge: null
+          extraLarge: null,
         },
       },
-      errorMessage: '',
+      snackbar: false,
+      errorMessage: "",
       isLoadingMedia: true,
-    }
+    };
   },
   async mounted() {
     this.fetchAnimeDetail();
   },
   methods: {
     async fetchAnimeDetail() {
-      this.errorMessage = '';
-      if(this.$route?.params?.id) {
-          let variables = {
-            id: this.$route.params.id,
-          };
-          try {
-            this.isLoadingMedia = true;
-            const response = await this.$store.dispatch('anime/fetchAnimeDetail', variables);
-            this.media = { ...response.Media };
+      this.errorMessage = "";
+      if (this.$route?.params?.id) {
+        let variables = {
+          id: this.$route.params.id,
+        };
+        try {
+          this.isLoadingMedia = true;
+          const response = await this.$store.dispatch(
+            "anime/fetchAnimeDetail",
+            variables
+          );
+          this.media = { ...response.Media };
+        } catch (error) {
+          this.errorMessage = "An error occurred";
+          const errorStatus = error?.response?.status;
+          if (errorStatus && errorStatus === 404) {
+            this.errorMessage = "Anime Not Found";
           }
-          catch(error) {
-            this.errorMessage = 'An error occurred'
-            const errorStatus = error?.response?.status;
-            if(errorStatus && errorStatus === 404) {
-              this.errorMessage = 'Anime Not Found';
-            }
-          }
-          finally {
-            this.isLoadingMedia = false;
-          }
-        } else {
+        } finally {
           this.isLoadingMedia = false;
         }
-      },
-  }
-}
+      } else {
+        this.isLoadingMedia = false;
+      }
+    },
+    async addBookmarkedAnime() {
+      const variables = {
+        animeId: this.$route.params.id,
+      };
+      try {
+        this.$store.dispatch("anime/addBookmarkAnime", variables);
+        this.snackbar = true;
+      } finally {
+      }
+    },
+  },
+};
 </script>
 <style lang="scss" scoped>
 .scroll_container {

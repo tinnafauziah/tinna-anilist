@@ -71,7 +71,7 @@ exports[`Index Page should index page match snapshot 1`] = `
       />
     </v-flex-stub>
     <v-flex-stub
-      class="ml-2"
+      class="xs1 ml-4 mr-6"
       tag="div"
     >
       <v-btn-stub
@@ -82,6 +82,23 @@ exports[`Index Page should index page match snapshot 1`] = `
         xlarge="true"
       >
         Search
+      </v-btn-stub>
+    </v-flex-stub>
+    <v-spacer-stub
+      tag="div"
+    />
+    <v-flex-stub
+      class="ml-6"
+      tag="div"
+    >
+      <v-btn-stub
+        activeclass=""
+        color="teal accent-4"
+        tag="button"
+        type="button"
+        xlarge="true"
+      >
+        Bookmarked Anime
       </v-btn-stub>
     </v-flex-stub>
   </v-layout-stub>

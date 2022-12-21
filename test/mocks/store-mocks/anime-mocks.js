@@ -1,5 +1,6 @@
 import Page from '~/test/mocks/api-mocks/anime-list';
 import Media from '~/test/mocks/api-mocks/anime-detail';
+import Viewer from '~/test/mocks/api-mocks/anime-bookmark';
 
 const animeMock = {
   anime: {
@@ -31,6 +32,8 @@ const animeMock = {
         ]
       }),
       fetchAnimeDetail: jest.fn().mockReturnValue({ Media }),
+      fetchAnimeBookmarks: jest.fn().mockReturnValue({ Viewer }),
+      addBookmarkAnime: jest.fn(),
     },
     namespaced: true,
   },

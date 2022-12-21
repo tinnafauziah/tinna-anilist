@@ -1,0 +1,28 @@
+{
+  "id": 6107826,
+  "name": "tinnafauziah",
+  "favourites": {
+    "anime": {
+      "pageInfo": {
+        "total": 1,
+        "perPage": 25,
+        "hasNextPage": false
+      },
+      "nodes": [
+        {
+          "id": 127230,
+          "title": {
+            "romaji": "Chainsaw Man",
+            "english": "Chainsaw Man"
+          },
+          "genres": ["Action", "Comedy", "Drama", "Horror", "Supernatural"],
+          "coverImage": {
+            "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127230-FlochcFsyoF4.png"
+          },
+          "averageScore": 86,
+          "isFavourite": false
+        }
+      ]
+    }
+  }
+}

@@ -62,6 +62,74 @@ export const actions = {
 
     return anime;
   },
+  async addBookmarkAnime(_, variables) {
+    const query = gql`
+      mutation ($animeId: Int) {
+        ToggleFavourite(animeId: $animeId) {
+          anime {
+            pageInfo {
+              total
+              perPage
+              hasNextPage
+            }
+            nodes {
+              title {
+                romaji
+                english
+              }
+              isFavourite
+            }
+          }
+        }
+      }
+    `;
+    const requestHeaders = {
+      'Authorization': `Bearer ${localStorage.getItem("token")}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    };
+    const anime = await this.$graphql.default.request(query, variables, requestHeaders);
+    return anime;
+  },
+  async fetchAnimeBookmarks(_, variables) {
+    const query = gql`
+      query ($page: Int, $perPage: Int) {
+        Viewer {
+          id
+          name
+          favourites {
+            anime(page: $page, perPage: $perPage) {
+              pageInfo {
+                total
+                perPage
+                hasNextPage
+              }
+              nodes {
+                id
+                title {
+                  romaji
+                  english
+                }
+                genres
+                coverImage {
+                  large
+                }
+                averageScore
+                isFavourite
+              }
+            }
+          }
+        }
+      }
+    `;
+    const requestHeaders = {
+      'Authorization': `Bearer ${localStorage.getItem("token")}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    };
+    const anime = await this.$graphql.default.request(query, variables, requestHeaders);
+    return anime;
+  },
 }
 export default {
   namespace: true,
