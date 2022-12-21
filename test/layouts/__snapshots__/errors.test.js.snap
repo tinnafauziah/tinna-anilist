@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Error should layout page match snapshot 1`] = `
+<v-app-stub
+  id="app"
+>
+  <div
+    class="display-1"
+  >
+    function () { [native code] }
+  </div>
+  <div
+    class="subtitle-1"
+  >
+    Please return to
+    <span>
+       
+      <a>
+        Home page
+      </a>
+    </span>
+  </div>
+</v-app-stub>
+`;
