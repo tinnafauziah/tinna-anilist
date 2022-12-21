@@ -137,19 +137,6 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
@@ -199,19 +186,6 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
@@ -261,19 +235,6 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
@@ -323,19 +284,6 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
@@ -385,19 +333,6 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
@@ -447,19 +382,55 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
+    </v-card-stub>
+    <v-card-stub
+      class="mb-4 mr-4"
+      loaderheight="4"
+      tag="div"
+      width="275"
+    >
+      <v-img-stub
+        height="400"
+        options="[object Object]"
+        position="center center"
+        src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158927-53X9gOa02JFG.jpg"
+        transition="fade-transition"
+      />
+      <v-card-text-stub
         tag="div"
       >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
+        <div
+          class="subtitle-1 font-weight-bold mb-1"
         >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
+          SPY×FAMILY Season 2
+        </div>
+        <v-layout-stub
+          align-center="align-center"
+          tag="div"
+          wrap="wrap"
+        >
+          <v-flex-stub
+            class="xs1 mr-1"
+            tag="div"
+          >
+            <v-icon-stub
+              color="gray"
+            >
+              mdi-emoticon-neutral-outline
+            </v-icon-stub>
+          </v-flex-stub>
+          <v-flex-stub
+            class="xs10"
+            tag="div"
+          >
+            <span
+              class="subtitle-1"
+            >
+              belum ada penilaian
+            </span>
+          </v-flex-stub>
+        </v-layout-stub>
+      </v-card-text-stub>
     </v-card-stub>
   </v-layout-stub>
 </div>

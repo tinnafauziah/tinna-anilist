@@ -35,8 +35,9 @@
               v-icon(:color='getRatingColor(anime.averageScore)') {{ getRatingIcon(anime.averageScore) }}
             v-flex.xs10
               span.subtitle-1 {{ anime.averageScore | animeAverageScore }}
-        v-card-actions
-          v-btn(text, color='teal accent-4') Detail
+        //- TODO: Uncomment this when the detail page already created
+        //- v-card-actions
+        //-   v-btn(text, color='teal accent-4') Detail
 </template>
 
 <script>
@@ -87,7 +88,7 @@ export default {
       return title?.english || title?.romaji;
     },
     animeAverageScore(averageScore) {
-      return averageScore || 'tidak diketahui';
+      return averageScore || 'belum ada penilaian';
     },
   },
   methods: {
