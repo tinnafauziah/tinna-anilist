@@ -15,7 +15,7 @@ describe('Index Page', () => {
     store = global.createStore({ ...modules });
     return global.shallowMount(index, { store, mocks });
   };
-  it('should redirect to another menu is menu is toggle on /', async () => {
+  it('should index page match snapshot', async () => {
     const wrapper = mockPage();
     await flushPromises();
     expect(wrapper.element).toMatchSnapshot();
