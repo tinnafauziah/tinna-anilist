@@ -27,7 +27,7 @@
       v-btn(color='teal accent-4', x-large, @click='fetchAnimeList()') Search
     v-spacer
     v-flex.ml-6
-      v-btn(color='teal accent-4', x-large, @click='$router.push("bookmark/")') Bookmarked Anime
+      v-btn(color='teal accent-4', x-large, @click='$router.push("/bookmark/")') Bookmarked Anime
   v-layout.scroll_container(wrap, @scroll='handleScroll(debounceLoadAnimeList)')
     template(v-if='isFirstLoading')
       v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
@@ -150,7 +150,7 @@ export default {
       { maxWait: 1000 }
     ),
     redirectAnimeDetail(anime) {
-      this.$router.push(`anime/${anime.id}`);
+      this.$router.push(`/anime/${anime.id}`);
     },
   },
 };

@@ -105,6 +105,7 @@ export const actions = {
                 hasNextPage
               }
               nodes {
+                id
                 title {
                   romaji
                   english

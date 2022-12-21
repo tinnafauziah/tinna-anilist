@@ -72,7 +72,6 @@ export default {
           variables
         );
 
-        console.log(response.Viewer.favourites.anime);
         const { nodes, pageInfo } = response.Viewer.favourites.anime;
 
         this.animes = [...this.animes, ...nodes];
@@ -104,6 +103,7 @@ export default {
       { maxWait: 1000 }
     ),
     redirectAnimeDetail(anime) {
+      console.log(anime);
       this.$router.push(`/anime/${anime.id}`);
     },
   },

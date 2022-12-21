@@ -117,6 +117,7 @@ describe('Store: anime', () => {
                 hasNextPage
               }
               nodes {
+                id
                 title {
                   romaji
                   english
