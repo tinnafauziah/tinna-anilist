@@ -25,11 +25,11 @@ export default {
   name: "DefaulLayout",
   computed: {
     ...mapGetters({
-      currentUser: "user/getCurrentUser",
+      currentUser: "users/getCurrentUser",
     }),
   },
   mounted() {
-    this.$store.dispatch("user/fetchCurrentUser");
+    this.$store.dispatch("users/fetchCurrentUser");
   },
   methods: {
     loginWithAnilist() {

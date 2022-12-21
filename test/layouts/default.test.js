@@ -31,7 +31,7 @@ describe('Layout Default', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
   it.each([[null], [currentUser]])('should layout page match snapshot when current user is %s', async (currentUser) => {
-    userMock.user.getters.getCurrentUser.mockReturnValue(currentUser);
+    userMock.users.getters.getCurrentUser.mockReturnValue(currentUser);
     const wrapper = mockPage();
     await flushPromises();
     expect(wrapper.element).toMatchSnapshot();

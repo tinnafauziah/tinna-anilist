@@ -1,7 +1,7 @@
 import View from '~/test/mocks/api-mocks/current-user';
 
 const userMock = {
-  user: {
+  users: {
     getters: {
       getCurrentUser: jest.fn().mockReturnValue(View),
     },
