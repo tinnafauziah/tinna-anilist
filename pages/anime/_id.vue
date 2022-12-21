@@ -43,7 +43,7 @@
       v-flex.xs6
         .title {{ media.title | animeTitle  }}
         .subtitle-1.mb-6(v-html='media.description')
-        v-chip(v-for='genre in media.genres', :key="genre") {{ genre }}
+        v-chip.mr-4(v-for='genre in media.genres', :key="genre") {{ genre }}
 </template>
 
 <script>
