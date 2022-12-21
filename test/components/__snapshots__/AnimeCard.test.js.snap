@@ -24,6 +24,7 @@ exports[`Anime Index Page should anime Index page match snapshot 1`] = `
     </div>
     <v-layout-stub
       align-center="align-center"
+      class="mb-4"
       tag="div"
       wrap="wrap"
     >
@@ -47,62 +48,62 @@ exports[`Anime Index Page should anime Index page match snapshot 1`] = `
           86%
         </span>
       </v-flex-stub>
-      <v-flex-stub
-        class="xs10"
-        tag="div"
-      >
-        <v-chip-stub
-          active="true"
-          activeclass=""
-          closeicon="$delete"
-          closelabel="$vuetify.close"
-          filtericon="$complete"
-          tag="span"
-        >
-          Action
-        </v-chip-stub>
-        <v-chip-stub
-          active="true"
-          activeclass=""
-          closeicon="$delete"
-          closelabel="$vuetify.close"
-          filtericon="$complete"
-          tag="span"
-        >
-          Comedy
-        </v-chip-stub>
-        <v-chip-stub
-          active="true"
-          activeclass=""
-          closeicon="$delete"
-          closelabel="$vuetify.close"
-          filtericon="$complete"
-          tag="span"
-        >
-          Drama
-        </v-chip-stub>
-        <v-chip-stub
-          active="true"
-          activeclass=""
-          closeicon="$delete"
-          closelabel="$vuetify.close"
-          filtericon="$complete"
-          tag="span"
-        >
-          Horror
-        </v-chip-stub>
-        <v-chip-stub
-          active="true"
-          activeclass=""
-          closeicon="$delete"
-          closelabel="$vuetify.close"
-          filtericon="$complete"
-          tag="span"
-        >
-          Supernatural
-        </v-chip-stub>
-      </v-flex-stub>
     </v-layout-stub>
+    <v-chip-stub
+      active="true"
+      activeclass=""
+      class="mb-4 mr-4"
+      closeicon="$delete"
+      closelabel="$vuetify.close"
+      filtericon="$complete"
+      tag="span"
+    >
+      Action
+    </v-chip-stub>
+    <v-chip-stub
+      active="true"
+      activeclass=""
+      class="mb-4 mr-4"
+      closeicon="$delete"
+      closelabel="$vuetify.close"
+      filtericon="$complete"
+      tag="span"
+    >
+      Comedy
+    </v-chip-stub>
+    <v-chip-stub
+      active="true"
+      activeclass=""
+      class="mb-4 mr-4"
+      closeicon="$delete"
+      closelabel="$vuetify.close"
+      filtericon="$complete"
+      tag="span"
+    >
+      Drama
+    </v-chip-stub>
+    <v-chip-stub
+      active="true"
+      activeclass=""
+      class="mb-4 mr-4"
+      closeicon="$delete"
+      closelabel="$vuetify.close"
+      filtericon="$complete"
+      tag="span"
+    >
+      Horror
+    </v-chip-stub>
+    <v-chip-stub
+      active="true"
+      activeclass=""
+      class="mb-4 mr-4"
+      closeicon="$delete"
+      closelabel="$vuetify.close"
+      filtericon="$complete"
+      tag="span"
+    >
+      Supernatural
+    </v-chip-stub>
   </v-card-text-stub>
 </v-card-stub>
 `;
@@ -130,6 +131,7 @@ exports[`Anime Index Page should anime Index page match snapshot by default anim
     </div>
     <v-layout-stub
       align-center="align-center"
+      class="mb-4"
       tag="div"
       wrap="wrap"
     >
@@ -153,10 +155,6 @@ exports[`Anime Index Page should anime Index page match snapshot by default anim
           belum ada penilaian
         </span>
       </v-flex-stub>
-      <v-flex-stub
-        class="xs10"
-        tag="div"
-      />
     </v-layout-stub>
   </v-card-text-stub>
 </v-card-stub>
