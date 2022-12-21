@@ -7,7 +7,7 @@ exports[`Index Page should index page match snapshot 1`] = `
   <div
     class="display-2 mb-4"
   >
-    Cari Anime
+    Search Anime
   </div>
   <v-layout-stub
     tag="div"
@@ -57,7 +57,7 @@ exports[`Index Page should index page match snapshot 1`] = `
         items="[object Object]"
         itemtext="text"
         itemvalue="value"
-        label="Urut berdasarkan"
+        label="Sorted by"
         loaderheight="2"
         menuprops="[object Object]"
         messages=""
@@ -81,7 +81,7 @@ exports[`Index Page should index page match snapshot 1`] = `
         type="button"
         xlarge="true"
       >
-        Cari
+        Search
       </v-btn-stub>
     </v-flex-stub>
   </v-layout-stub>

@@ -1,6 +1,6 @@
 <template lang="pug">
 .index-anime
-  .display-2.mb-4 Cari Anime
+  .display-2.mb-4 Search Anime
   v-layout(wrap)
     v-flex.xs4
       v-select(
@@ -13,18 +13,18 @@
         template(v-slot:selection='{ item, index }')
           v-chip(v-if='index < showedGenresLength')
             span {{ item }}
-          span.grey--text.ml-1(v-if='index === showedGenresLength') (+{{ selectedGenres.length - showedGenresLength }} lainnya)
+          span.grey--text.ml-1(v-if='index === showedGenresLength') (+{{ selectedGenres.length - showedGenresLength }} others)
     v-flex.xs4.ml-2
       v-select(
         v-model='selectedSort',
         :items='sorts',
-        label='Urut berdasarkan',
+        label='Sorted by',
         outlined,
         item-text='text',
         item-value='value'
       )
     v-flex.ml-2
-      v-btn(color='teal accent-4', x-large, @click='fetchAnimeList()') Cari
+      v-btn(color='teal accent-4', x-large, @click='fetchAnimeList()') Search
   v-layout.scroll_container(wrap, @scroll='handleScroll(debounceLoadAnimeList)')
     template(v-if='isFirstLoading')
       v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
