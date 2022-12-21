@@ -35,7 +35,7 @@
           type='card'
         )
     template(v-else)
-      v-card.mb-4.mr-4(v-for='anime in animes', width='350', :key='anime.id')
+      v-card.mb-4.mr-4(v-for='anime in animes', width='350', :key='anime.id', @click='redirectAnimeDetail(anime)')
         v-img(height='400', :src='anime.coverImage.large')
         v-card-text
           .subtitle-1.font-weight-bold.mb-1 {{ anime.title | animeTitle }}
@@ -58,9 +58,11 @@
 
 <script>
 import { debounce } from 'lodash-es';
+import humanizeAnimeString from '~/mixins/humanize-anime-string';
 
 export default {
   name: 'IndexPage',
+  mixins: [humanizeAnimeString],
   data () {
     return {
       genres: [],
@@ -75,28 +77,6 @@ export default {
           value: 'TRENDING_DESC',
         }
       ],
-      rateFloorDict: {
-        81: {
-          color: 'green',
-          icon: 'mdi-emoticon-excited-outline',
-        },
-        61: {
-          color: 'yellow',
-          icon: 'mdi-emoticon-happy-outline',
-        },
-        41: {
-          color: 'lime',
-          icon: 'mdi-emoticon-neutral-outline',
-        },
-        21: {
-          color: 'orange',
-          icon: 'mdi-emoticon-sad-outline',
-        },
-        0: {
-          color: 'red',
-          icon: 'mdi-emoticon-cry-outline',
-        }
-      },
       selectedGenres: [],
       selectedSort: 'TRENDING_DESC',
       animes: [],
@@ -106,15 +86,6 @@ export default {
   async mounted() {
     this.fetchGenres();
     this.fetchAnimeList();
-  },
-  filters: {
-    animeTitle(title) {
-      return title?.english || title?.romaji;
-    },
-    animeAverageScore(averageScore) {
-      if(averageScore) return `${averageScore}%`
-      return 'belum ada penilaian';
-    },
   },
   methods: {
     async fetchGenres() {
@@ -152,19 +123,6 @@ export default {
         this.isFirstLoading = false;
       }
     },
-    getSelectedRating(averageScore) {
-      const rateFloorArray = Object.keys(this.rateFloorDict).reverse()
-      const selectedRateFloor = rateFloorArray.find(rateFloor => averageScore > Number(rateFloor));
-      return this.rateFloorDict[selectedRateFloor] || { color: 'gray', icon: 'mdi-emoticon-neutral-outline' };
-    },
-    getRatingColor(averageScore) {
-      const rate = this.getSelectedRating(averageScore);
-      return rate.color;
-    },
-    getRatingIcon(averageScore) {
-      const rate = this.getSelectedRating(averageScore);
-      return rate.icon;
-    },
     handleScroll(debounceLoadFunction) {
       const selectedContainer = document.querySelector('.scroll_container');
       if (
@@ -183,6 +141,9 @@ export default {
       500,
       { maxWait: 1000 },
     ),
+    redirectAnimeDetail(anime) {
+      this.$router.push(`anime/${anime.id}`)
+    }
   }
 }
 </script>
