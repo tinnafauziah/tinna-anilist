@@ -73,3 +73,69 @@ One day, Denji is betrayed and killed. As his consciousness fades, he makes a co
   </v-layout-stub>
 </div>
 `;
+
+exports[`Anime Detail Page should anime detail page match snapshot when error: { status: 404 } 1`] = `
+<div
+  class="detail-anime"
+>
+  <v-layout-stub
+    tag="div"
+    wrap="wrap"
+  >
+    <v-flex-stub
+      class=""
+      tag="div"
+    >
+      <div
+        class="display-1"
+      >
+        Anime Not Found
+      </div>
+      <div
+        class="subtitle-1"
+      >
+        Please return to
+        <span>
+           
+          <a>
+            Home page
+          </a>
+        </span>
+      </div>
+    </v-flex-stub>
+  </v-layout-stub>
+</div>
+`;
+
+exports[`Anime Detail Page should anime detail page match snapshot when error: { status: 404 } 2`] = `
+<div
+  class="detail-anime"
+>
+  <v-layout-stub
+    tag="div"
+    wrap="wrap"
+  >
+    <v-flex-stub
+      class=""
+      tag="div"
+    >
+      <div
+        class="display-1"
+      >
+        Anime Not Found
+      </div>
+      <div
+        class="subtitle-1"
+      >
+        Please return to
+        <span>
+           
+          <a>
+            Home page
+          </a>
+        </span>
+      </div>
+    </v-flex-stub>
+  </v-layout-stub>
+</div>
+`;

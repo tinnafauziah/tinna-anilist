@@ -20,6 +20,12 @@
           class='mx-auto',
           type='paragraph'
         )
+    template(v-else-if='errorMessage')
+      v-flex
+        .display-1 {{ errorMessage }}
+        .subtitle-1 Please return to
+          span &nbsp;
+            NuxtLink(to='/') Home page
     template(v-else)
       v-flex.xs3.mr-3
         v-img(:src='media.coverImage.extraLarge')
@@ -41,7 +47,12 @@ export default {
   mixins: [humanizeAnimeString],
   data () {
     return {
-      media: {},
+      media: {
+        coverImage: {
+          extraLarge: null
+        },
+      },
+      errorMessage: '',
       isLoadingMedia: true,
     }
   },
@@ -50,6 +61,7 @@ export default {
   },
   methods: {
     async fetchAnimeDetail() {
+      this.errorMessage = '';
       if(this.$route?.params?.id) {
           let variables = {
             id: this.$route.params.id,
@@ -58,7 +70,15 @@ export default {
             this.isLoadingMedia = true;
             const response = await this.$store.dispatch('anime/fetchAnimeDetail', variables);
             this.media = { ...response.Media };
-          } finally {
+          }
+          catch(error) {
+            this.errorMessage = 'An error occurred'
+            const errorStatus = error?.response?.status;
+            if(errorStatus && errorStatus === 404) {
+              this.errorMessage = 'Anime Not Found';
+            }
+          }
+          finally {
             this.isLoadingMedia = false;
           }
         } else {

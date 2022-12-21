@@ -25,4 +25,14 @@ describe('Anime Detail Page', () => {
     await flushPromises();
     expect(wrapper.element).toMatchSnapshot();
   });
+  it.each([[{ status: 404 }], [{ status: 404 }]])('should anime detail page match snapshot when error: %s', async (response) => {
+    animeMock.anime.actions.fetchAnimeDetail.mockImplementation(() => {
+      const fetchError = new Error();
+      fetchError.response = response;
+      throw fetchError;
+    });
+    const wrapper = mockPage();
+    await flushPromises();
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
