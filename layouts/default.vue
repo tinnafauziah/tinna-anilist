@@ -28,14 +28,23 @@ export default {
       currentUser: "users/getCurrentUser",
     }),
   },
+  data() {
+    return {
+      nodeEnvOauthUrl: {
+        production:
+          "https://anilist.co/api/v2/oauth/authorize?client_id=10464&response_type=token",
+        development:
+          "https://anilist.co/api/v2/oauth/authorize?client_id=10461&response_type=token",
+      },
+    };
+  },
   mounted() {
     this.$store.dispatch("users/fetchCurrentUser");
   },
   methods: {
     loginWithAnilist() {
-      window.location.replace(
-        "https://anilist.co/api/v2/oauth/authorize?client_id=10461&response_type=token"
-      );
+      const nodeEnv = process.env.NODE_ENV;
+      window.location.replace(this.nodeEnvOauthUrl[nodeEnv]);
     },
     isAuthorizeRoute() {
       this.$route.path === "/authorize";
