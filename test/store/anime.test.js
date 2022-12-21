@@ -14,6 +14,7 @@ describe('Store: anime', () => {
           pageInfo {
             total
             perPage
+            hasNextPage
           }
           media(search: $search, type: ANIME, sort: $sort, genre_in: $genre_in) {
             id

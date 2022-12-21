@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index Page should redirect to another menu is menu is toggle on / 1`] = `
+exports[`Index Page should index page match snapshot 1`] = `
 <div
   class="index-anime"
 >
@@ -86,6 +86,7 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
     </v-flex-stub>
   </v-layout-stub>
   <v-layout-stub
+    class="scroll_container"
     tag="div"
     wrap="wrap"
   >
@@ -93,7 +94,7 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
       class="mb-4 mr-4"
       loaderheight="4"
       tag="div"
-      width="275"
+      width="350"
     >
       <v-img-stub
         height="400"
@@ -132,17 +133,30 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
             <span
               class="subtitle-1"
             >
-              86
+              86%
             </span>
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
+      <v-card-actions-stub
+        tag="div"
+      >
+        <v-btn-stub
+          activeclass=""
+          color="teal accent-4"
+          tag="button"
+          text="true"
+          type="button"
+        >
+          Detail
+        </v-btn-stub>
+      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
       loaderheight="4"
       tag="div"
-      width="275"
+      width="350"
     >
       <v-img-stub
         height="400"
@@ -181,17 +195,30 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
             <span
               class="subtitle-1"
             >
-              89
+              89%
             </span>
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
+      <v-card-actions-stub
+        tag="div"
+      >
+        <v-btn-stub
+          activeclass=""
+          color="teal accent-4"
+          tag="button"
+          text="true"
+          type="button"
+        >
+          Detail
+        </v-btn-stub>
+      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
       loaderheight="4"
       tag="div"
-      width="275"
+      width="350"
     >
       <v-img-stub
         height="400"
@@ -230,17 +257,30 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
             <span
               class="subtitle-1"
             >
-              87
+              87%
             </span>
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
+      <v-card-actions-stub
+        tag="div"
+      >
+        <v-btn-stub
+          activeclass=""
+          color="teal accent-4"
+          tag="button"
+          text="true"
+          type="button"
+        >
+          Detail
+        </v-btn-stub>
+      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
       loaderheight="4"
       tag="div"
-      width="275"
+      width="350"
     >
       <v-img-stub
         height="400"
@@ -279,17 +319,30 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
             <span
               class="subtitle-1"
             >
-              84
+              84%
             </span>
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
+      <v-card-actions-stub
+        tag="div"
+      >
+        <v-btn-stub
+          activeclass=""
+          color="teal accent-4"
+          tag="button"
+          text="true"
+          type="button"
+        >
+          Detail
+        </v-btn-stub>
+      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
       loaderheight="4"
       tag="div"
-      width="275"
+      width="350"
     >
       <v-img-stub
         height="400"
@@ -328,17 +381,30 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
             <span
               class="subtitle-1"
             >
-              59
+              59%
             </span>
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
+      <v-card-actions-stub
+        tag="div"
+      >
+        <v-btn-stub
+          activeclass=""
+          color="teal accent-4"
+          tag="button"
+          text="true"
+          type="button"
+        >
+          Detail
+        </v-btn-stub>
+      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
       loaderheight="4"
       tag="div"
-      width="275"
+      width="350"
     >
       <v-img-stub
         height="400"
@@ -377,17 +443,30 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
             <span
               class="subtitle-1"
             >
-              80
+              80%
             </span>
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
+      <v-card-actions-stub
+        tag="div"
+      >
+        <v-btn-stub
+          activeclass=""
+          color="teal accent-4"
+          tag="button"
+          text="true"
+          type="button"
+        >
+          Detail
+        </v-btn-stub>
+      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4"
       loaderheight="4"
       tag="div"
-      width="275"
+      width="350"
     >
       <v-img-stub
         height="400"
@@ -431,7 +510,21 @@ exports[`Index Page should redirect to another menu is menu is toggle on / 1`] =
           </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
+      <v-card-actions-stub
+        tag="div"
+      >
+        <v-btn-stub
+          activeclass=""
+          color="teal accent-4"
+          tag="button"
+          text="true"
+          type="button"
+        >
+          Detail
+        </v-btn-stub>
+      </v-card-actions-stub>
     </v-card-stub>
+    <!---->
   </v-layout-stub>
 </div>
 `;
