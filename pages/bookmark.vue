@@ -103,7 +103,6 @@ export default {
       { maxWait: 1000 }
     ),
     redirectAnimeDetail(anime) {
-      console.log(anime);
       this.$router.push(`/anime/${anime.id}`);
     },
   },

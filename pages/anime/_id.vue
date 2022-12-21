@@ -31,7 +31,7 @@
         NuxtLink(to='/') Home page
   template(v-else)
     v-btn.mb-3(color='teal accent-4', @click='addBookmarkedAnime()') Add to bookmarked
-    v-snackbar(v-model="snackbar") Aksi berhasil diproses
+    v-snackbar(v-model="snackbar") {{ snackbarMessage }}
     v-layout(wrap)
       v-flex.xs3.mr-3
         v-img(:src='media.coverImage.extraLarge')
@@ -42,16 +42,17 @@
             span.subtitle-1 {{ media.averageScore | animeAverageScore }}
       v-flex.xs6
         .title {{ media.title | animeTitle  }}
-        .subtitle-1(v-html='media.description')
-        //- v-chip(v-for=''')
+        .subtitle-1.mb-6(v-html='media.description')
+        v-chip.mr-4(v-for='genre in media.genres', :key="genre") {{ genre }}
 </template>
 
 <script>
 import humanizeAnimeString from "~/mixins/humanize-anime-string";
+import authorize from "~/mixins/authorize";
 
 export default {
   name: "DetailPage",
-  mixins: [humanizeAnimeString],
+  mixins: [humanizeAnimeString, authorize],
   data() {
     return {
       media: {
@@ -60,6 +61,7 @@ export default {
         },
       },
       snackbar: false,
+      snackbarMessage: "",
       errorMessage: "",
       isLoadingMedia: true,
     };
@@ -100,7 +102,12 @@ export default {
       };
       try {
         this.$store.dispatch("anime/addBookmarkAnime", variables);
+        this.snackbarMessage = "Action success";
         this.snackbar = true;
+      } catch {
+        this.snackbar = true;
+        this.snackbarMessage = "An error occured, Please try again";
+        this.authorize();
       } finally {
       }
     },
@@ -113,3 +120,4 @@ export default {
   height: 586px;
 }
 </style>
+-->

@@ -19,7 +19,7 @@ exports[`Anime Detail Page should anime detail page match snapshot 1`] = `
     timeout="5000"
     transition="v-snack-transition"
   >
-    Aksi berhasil diproses
+    
   </v-snackbar-stub>
   <v-layout-stub
     tag="div"
@@ -72,7 +72,7 @@ exports[`Anime Detail Page should anime detail page match snapshot 1`] = `
         Chainsaw Man
       </div>
       <div
-        class="subtitle-1"
+        class="subtitle-1 mb-6"
       >
         Denji is a teenage boy living with a Chainsaw Devil named Pochita. Due to the debt his father left behind, he has been living a rock-bottom life while repaying his debt by harvesting devil corpses with Pochita.
         <br />
@@ -86,6 +86,61 @@ One day, Denji is betrayed and killed. As his consciousness fades, he makes a co
         
 (Source: Crunchyroll)
       </div>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Action
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Comedy
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Drama
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Horror
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Supernatural
+      </v-chip-stub>
     </v-flex-stub>
   </v-layout-stub>
 </div>

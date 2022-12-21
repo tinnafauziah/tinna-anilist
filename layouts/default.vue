@@ -25,9 +25,11 @@ v-app
 
 <script>
 import { mapGetters } from "vuex";
+import authorize from "~/mixins/authorize";
 
 export default {
   name: "DefaulLayout",
+  mixins: [authorize],
   computed: {
     ...mapGetters({
       currentUser: "users/getCurrentUser",
@@ -47,15 +49,13 @@ export default {
   async mounted() {
     try {
       await this.$store.dispatch("users/fetchCurrentUser");
+    } catch {
+      this.authorize();
     } finally {
       this.isLoadingCurrentUser = false;
     }
   },
   methods: {
-    loginWithAnilist() {
-      const nodeEnv = process.env.NODE_ENV;
-      window.location.replace(this.nodeEnvOauthUrl[nodeEnv]);
-    },
     isAuthorizeRoute() {
       this.$route.path === "/authorize";
     },

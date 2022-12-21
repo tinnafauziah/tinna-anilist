@@ -144,7 +144,7 @@ exports[`Index Page should index page match snapshot 1`] = `
             </v-icon-stub>
           </v-flex-stub>
           <v-flex-stub
-            class="xs10"
+            class="xs10 mb-1"
             tag="div"
           >
             <span
@@ -153,21 +153,63 @@ exports[`Index Page should index page match snapshot 1`] = `
               86%
             </span>
           </v-flex-stub>
+          <v-flex-stub
+            class="xs10"
+            tag="div"
+          >
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Action
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Comedy
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Drama
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Horror
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Supernatural
+            </v-chip-stub>
+          </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4 anime_detail_card"
@@ -206,7 +248,7 @@ exports[`Index Page should index page match snapshot 1`] = `
             </v-icon-stub>
           </v-flex-stub>
           <v-flex-stub
-            class="xs10"
+            class="xs10 mb-1"
             tag="div"
           >
             <span
@@ -215,21 +257,43 @@ exports[`Index Page should index page match snapshot 1`] = `
               89%
             </span>
           </v-flex-stub>
+          <v-flex-stub
+            class="xs10"
+            tag="div"
+          >
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Action
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Adventure
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Supernatural
+            </v-chip-stub>
+          </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4 anime_detail_card"
@@ -268,7 +332,7 @@ exports[`Index Page should index page match snapshot 1`] = `
             </v-icon-stub>
           </v-flex-stub>
           <v-flex-stub
-            class="xs10"
+            class="xs10 mb-1"
             tag="div"
           >
             <span
@@ -277,21 +341,63 @@ exports[`Index Page should index page match snapshot 1`] = `
               87%
             </span>
           </v-flex-stub>
+          <v-flex-stub
+            class="xs10"
+            tag="div"
+          >
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Action
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Adventure
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Comedy
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Drama
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Fantasy
+            </v-chip-stub>
+          </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4 anime_detail_card"
@@ -330,7 +436,7 @@ exports[`Index Page should index page match snapshot 1`] = `
             </v-icon-stub>
           </v-flex-stub>
           <v-flex-stub
-            class="xs10"
+            class="xs10 mb-1"
             tag="div"
           >
             <span
@@ -339,21 +445,53 @@ exports[`Index Page should index page match snapshot 1`] = `
               84%
             </span>
           </v-flex-stub>
+          <v-flex-stub
+            class="xs10"
+            tag="div"
+          >
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Action
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Comedy
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Slice of Life
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Supernatural
+            </v-chip-stub>
+          </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4 anime_detail_card"
@@ -392,7 +530,7 @@ exports[`Index Page should index page match snapshot 1`] = `
             </v-icon-stub>
           </v-flex-stub>
           <v-flex-stub
-            class="xs10"
+            class="xs10 mb-1"
             tag="div"
           >
             <span
@@ -401,21 +539,23 @@ exports[`Index Page should index page match snapshot 1`] = `
               59%
             </span>
           </v-flex-stub>
+          <v-flex-stub
+            class="xs10"
+            tag="div"
+          >
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Action
+            </v-chip-stub>
+          </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4 anime_detail_card"
@@ -454,7 +594,7 @@ exports[`Index Page should index page match snapshot 1`] = `
             </v-icon-stub>
           </v-flex-stub>
           <v-flex-stub
-            class="xs10"
+            class="xs10 mb-1"
             tag="div"
           >
             <span
@@ -463,21 +603,43 @@ exports[`Index Page should index page match snapshot 1`] = `
               80%
             </span>
           </v-flex-stub>
+          <v-flex-stub
+            class="xs10"
+            tag="div"
+          >
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Action
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Drama
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Sports
+            </v-chip-stub>
+          </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <v-card-stub
       class="mb-4 mr-4 anime_detail_card"
@@ -516,7 +678,7 @@ exports[`Index Page should index page match snapshot 1`] = `
             </v-icon-stub>
           </v-flex-stub>
           <v-flex-stub
-            class="xs10"
+            class="xs10 mb-1"
             tag="div"
           >
             <span
@@ -525,21 +687,53 @@ exports[`Index Page should index page match snapshot 1`] = `
               belum ada penilaian
             </span>
           </v-flex-stub>
+          <v-flex-stub
+            class="xs10"
+            tag="div"
+          >
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Action
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Comedy
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Slice of Life
+            </v-chip-stub>
+            <v-chip-stub
+              active="true"
+              activeclass=""
+              closeicon="$delete"
+              closelabel="$vuetify.close"
+              filtericon="$complete"
+              tag="span"
+            >
+              Supernatural
+            </v-chip-stub>
+          </v-flex-stub>
         </v-layout-stub>
       </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
     </v-card-stub>
     <!---->
   </v-layout-stub>
