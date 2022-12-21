@@ -57,13 +57,13 @@
 </template>
 
 <script>
-import { debounce } from 'lodash-es';
-import humanizeAnimeString from '~/mixins/humanize-anime-string';
+import { debounce } from "lodash-es";
+import humanizeAnimeString from "~/mixins/humanize-anime-string";
 
 export default {
-  name: 'IndexPage',
+  name: "IndexPage",
   mixins: [humanizeAnimeString],
-  data () {
+  data() {
     return {
       genres: [],
       isLoadingAnimeList: false,
@@ -73,15 +73,15 @@ export default {
       showedGenresLength: 3,
       sorts: [
         {
-          text: 'Trending',
-          value: 'TRENDING_DESC',
-        }
+          text: "Trending",
+          value: "TRENDING_DESC",
+        },
       ],
       selectedGenres: [],
-      selectedSort: 'TRENDING_DESC',
+      selectedSort: "TRENDING_DESC",
       animes: [],
       page: 1,
-    }
+    };
   },
   async mounted() {
     this.fetchGenres();
@@ -90,10 +90,10 @@ export default {
   methods: {
     async fetchGenres() {
       try {
-        const response = await this.$store.dispatch('anime/fetchGenres');
+        const response = await this.$store.dispatch("anime/fetchGenres");
         this.genres = [...this.genres, ...response.GenreCollection];
+      } finally {
       }
-      finally {}
     },
     async fetchAnimeList(isFirst = true) {
       if (isFirst) {
@@ -105,13 +105,17 @@ export default {
       let variables = {
         page: this.page,
         perPage: 40,
-        sort: this.selectedSort
+        sort: this.selectedSort,
       };
 
-      if(this.selectedGenres.length > 0) variables = {...variables, genre_in: this.selectedGenres}
+      if (this.selectedGenres.length > 0)
+        variables = { ...variables, genre_in: this.selectedGenres };
 
       try {
-        const response = await this.$store.dispatch('anime/fetchAnimeList', variables);
+        const response = await this.$store.dispatch(
+          "anime/fetchAnimeList",
+          variables
+        );
         const { media, pageInfo } = response.Page;
 
         this.animes = [...this.animes, ...media];
@@ -124,10 +128,11 @@ export default {
       }
     },
     handleScroll(debounceLoadFunction) {
-      const selectedContainer = document.querySelector('.scroll_container');
+      const selectedContainer = document.querySelector(".scroll_container");
       if (
         selectedContainer &&
-        selectedContainer.scrollHeight <= selectedContainer.scrollTop + selectedContainer.offsetHeight + 0.5
+        selectedContainer.scrollHeight <=
+          selectedContainer.scrollTop + selectedContainer.offsetHeight + 0.5
       ) {
         debounceLoadFunction();
       }
@@ -139,13 +144,13 @@ export default {
         this.fetchAnimeList(false);
       },
       500,
-      { maxWait: 1000 },
+      { maxWait: 1000 }
     ),
     redirectAnimeDetail(anime) {
       this.$router.push(`anime/${anime.id}`);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 <style lang="scss" scoped>
 .scroll_container {

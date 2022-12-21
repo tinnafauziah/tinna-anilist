@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout Default should layout page match snapshot 1`] = `
+exports[`Layout Default should layout page match snapshot when current user is { id: 6107823, name: 'yooroll' } 1`] = `
 <v-app-stub
   id="app"
 >
@@ -20,6 +20,208 @@ exports[`Layout Default should layout page match snapshot 1`] = `
       >
         Anime List
       </v-toolbar-title-stub>
+      <v-spacer-stub
+        tag="div"
+      />
+      <v-menu-stub
+        closedelay="0"
+        closeonclick="true"
+        closeoncontentclick="true"
+        contentclass=""
+        maxheight="auto"
+        maxwidth="auto"
+        nudgebottom="0"
+        nudgeleft="0"
+        nudgeright="0"
+        nudgetop="0"
+        nudgewidth="0"
+        offsety="true"
+        opendelay="0"
+        openonclick="true"
+        origin="top left"
+        transition="v-menu-transition"
+      >
+        <v-list-stub
+          tag="div"
+        >
+          <v-list-item-stub
+            activeclass=""
+            tag="div"
+          >
+            <v-list-item-title-stub
+              tag="div"
+            >
+              Logout
+            </v-list-item-title-stub>
+          </v-list-item-stub>
+        </v-list-stub>
+      </v-menu-stub>
+    </v-app-bar-stub>
+    <nuxt-stub
+      class="mt-8 ml-8"
+    />
+  </v-main-stub>
+</v-app-stub>
+`;
+
+exports[`Layout Default should layout page match snapshot when current user is null 1`] = `
+<v-app-stub
+  id="app"
+>
+  <v-main-stub
+    tag="main"
+  >
+    <v-app-bar-stub
+      color="indigo lighten-4"
+      extensionheight="48"
+      src=""
+      tag="header"
+      value="true"
+    >
+      <v-toolbar-title-stub
+        class="toolbar-title"
+        tag="div"
+      >
+        Anime List
+      </v-toolbar-title-stub>
+      <v-spacer-stub
+        tag="div"
+      />
+      <v-btn-stub
+        activeclass=""
+        tag="button"
+        type="button"
+      >
+        Login with Anilist
+      </v-btn-stub>
+    </v-app-bar-stub>
+    <nuxt-stub
+      class="mt-8 ml-8"
+    />
+  </v-main-stub>
+</v-app-stub>
+`;
+
+exports[`Layout Default should layout page match snapshot when page is / 1`] = `
+<v-app-stub
+  id="app"
+>
+  <v-main-stub
+    tag="main"
+  >
+    <v-app-bar-stub
+      color="indigo lighten-4"
+      extensionheight="48"
+      src=""
+      tag="header"
+      value="true"
+    >
+      <v-toolbar-title-stub
+        class="toolbar-title"
+        tag="div"
+      >
+        Anime List
+      </v-toolbar-title-stub>
+      <v-spacer-stub
+        tag="div"
+      />
+      <v-menu-stub
+        closedelay="0"
+        closeonclick="true"
+        closeoncontentclick="true"
+        contentclass=""
+        maxheight="auto"
+        maxwidth="auto"
+        nudgebottom="0"
+        nudgeleft="0"
+        nudgeright="0"
+        nudgetop="0"
+        nudgewidth="0"
+        offsety="true"
+        opendelay="0"
+        openonclick="true"
+        origin="top left"
+        transition="v-menu-transition"
+      >
+        <v-list-stub
+          tag="div"
+        >
+          <v-list-item-stub
+            activeclass=""
+            tag="div"
+          >
+            <v-list-item-title-stub
+              tag="div"
+            >
+              Logout
+            </v-list-item-title-stub>
+          </v-list-item-stub>
+        </v-list-stub>
+      </v-menu-stub>
+    </v-app-bar-stub>
+    <nuxt-stub
+      class="mt-8 ml-8"
+    />
+  </v-main-stub>
+</v-app-stub>
+`;
+
+exports[`Layout Default should layout page match snapshot when page is /authorize 1`] = `
+<v-app-stub
+  id="app"
+>
+  <v-main-stub
+    tag="main"
+  >
+    <v-app-bar-stub
+      color="indigo lighten-4"
+      extensionheight="48"
+      src=""
+      tag="header"
+      value="true"
+    >
+      <v-toolbar-title-stub
+        class="toolbar-title"
+        tag="div"
+      >
+        Anime List
+      </v-toolbar-title-stub>
+      <v-spacer-stub
+        tag="div"
+      />
+      <v-menu-stub
+        closedelay="0"
+        closeonclick="true"
+        closeoncontentclick="true"
+        contentclass=""
+        maxheight="auto"
+        maxwidth="auto"
+        nudgebottom="0"
+        nudgeleft="0"
+        nudgeright="0"
+        nudgetop="0"
+        nudgewidth="0"
+        offsety="true"
+        opendelay="0"
+        openonclick="true"
+        origin="top left"
+        transition="v-menu-transition"
+      >
+        <v-list-stub
+          tag="div"
+        >
+          <v-list-item-stub
+            activeclass=""
+            tag="div"
+          >
+            <v-list-item-title-stub
+              tag="div"
+            >
+              Logout
+            </v-list-item-title-stub>
+          </v-list-item-stub>
+        </v-list-stub>
+      </v-menu-stub>
     </v-app-bar-stub>
     <nuxt-stub
       class="mt-8 ml-8"
