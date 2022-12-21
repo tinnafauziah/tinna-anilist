@@ -7,7 +7,7 @@ exports[`Layout Error should layout page match snapshot 1`] = `
   <div
     class="display-1"
   >
-    function () { [native code] }
+    An error occurred
   </div>
   <div
     class="subtitle-1"

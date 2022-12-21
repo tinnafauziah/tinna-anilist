@@ -28,7 +28,7 @@ export default {
       title
     }
   },
-  methods: {
+  computed: {
     errorMessage() {
       return this.error && this.error?.statusCode === 404 ? this.pageNotFound : this.otherError
     }
