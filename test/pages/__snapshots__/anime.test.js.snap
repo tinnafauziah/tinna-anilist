@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anime Index Page should anime Index page match snapshot 1`] = `
+<div
+  class="anime"
+>
+  <nuxtchild-stub />
+</div>
+`;

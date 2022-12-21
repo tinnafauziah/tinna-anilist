@@ -11,8 +11,10 @@ const mocks = {
     params: {
       id: 123
     }
-  }
+  },
+  $vuetify: { mobileBreakpoint: {} }
 };
+
 const modules = { ...animeMock };
 
 describe('Anime Detail Page', () => {

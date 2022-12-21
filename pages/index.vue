@@ -11,8 +11,7 @@
         multiple
         )
         template(v-slot:selection='{ item, index }')
-          v-chip(v-if='index < showedGenresLength')
-            span {{ item }}
+          v-chip(v-if='index < showedGenresLength') {{ item }}
           span.grey--text.ml-1(v-if='index === showedGenresLength') (+{{ selectedGenres.length - showedGenresLength }} others)
     v-flex.xs4.ml-2
       v-select(
@@ -45,12 +44,12 @@
           v-layout(wrap, align-center)
             v-flex.xs1.mr-1
               v-icon(:color='getRatingColor(anime.averageScore)') {{ getRatingIcon(anime.averageScore) }}
-            v-flex.xs10
+            v-flex.xs10.mb-1
               span.subtitle-1 {{ anime.averageScore | animeAverageScore }}
-        v-card-actions
-          v-btn(text, color='teal accent-4') Detail
+            v-flex.xs10
+              v-chip(v-for='genre in anime.genres', :key="genre") {{ genre }}
     template(v-if='hasNextPage')
-      v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
+      v-card.mb-4.mr-4(v-for='index in 8' :key='index', width='350')
           v-skeleton-loader(
             class='mx-auto'
             height='540',
