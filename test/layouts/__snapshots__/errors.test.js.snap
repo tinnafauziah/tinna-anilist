@@ -1,6 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout Error should layout page match snapshot 1`] = `
+exports[`Layout Error should layout page match snapshot based on error props: { statusCode: 404 } 1`] = `
+<v-app-stub
+  id="app"
+>
+  <div
+    class="display-1"
+  >
+    An error occurred
+  </div>
+  <div
+    class="subtitle-1"
+  >
+    Please return to
+    <span>
+       
+      <a>
+        Home page
+      </a>
+    </span>
+  </div>
+</v-app-stub>
+`;
+
+exports[`Layout Error should layout page match snapshot based on error props: { statusCode: 500 } 1`] = `
+<v-app-stub
+  id="app"
+>
+  <div
+    class="display-1"
+  >
+    An error occurred
+  </div>
+  <div
+    class="subtitle-1"
+  >
+    Please return to
+    <span>
+       
+      <a>
+        Home page
+      </a>
+    </span>
+  </div>
+</v-app-stub>
+`;
+
+exports[`Layout Error should layout page match snapshot based on error props: null 1`] = `
 <v-app-stub
   id="app"
 >

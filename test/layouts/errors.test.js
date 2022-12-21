@@ -1,12 +1,17 @@
 import errorLayout from '~/layouts/error';
 describe('Layout Error', () => {
   const mockPage = () => {
-    const propsData = {};
-    return global.shallowMount(errorLayout, { propsData });
+    return global.shallowMount(errorLayout);
   };
-  it('should layout page match snapshot', () => {
+  it.each([
+    [null],
+    [{ statusCode: 404 }],
+    [{ statusCode: 500 }]
+  ])('should layout page match snapshot based on error props: %s', async (statusCode) => {
     const wrapper = mockPage();
-    expect(wrapper.vm.error);
+    await wrapper.setProps({
+      error: { statusCode }
+    })
     expect(wrapper.element).toMatchSnapshot();
   });
 });
