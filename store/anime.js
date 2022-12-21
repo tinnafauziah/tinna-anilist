@@ -44,6 +44,28 @@ export const actions = {
     const animes = await this.$graphql.default.request(query);
     return animes;
   },
+  async fetchAnimeDetail(_, variables) {
+    const query = gql`
+      query ($id: Int) {
+        Media(id: $id) {
+          id
+          title {
+            romaji
+            english
+          }
+          genres
+          coverImage {
+            extraLarge
+          }
+          description
+          averageScore
+        }
+      }
+    `;
+
+    const animes = await this.$graphql.default.request(query, variables);
+    return animes;
+  },
 }
 export default {
   namespace: true,

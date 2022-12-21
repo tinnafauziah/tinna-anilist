@@ -44,4 +44,27 @@ describe('Store: anime', () => {
     actions.fetchGenres(null);
     expect(actions.$graphql.default.request).toBeCalledWith(query);
   });
+  it('should call fetchAnimeDetail properly', () => {
+    const query = gql`
+      query ($id: Int) {
+        Media(id: $id) {
+          id
+          title {
+            romaji
+            english
+          }
+          genres
+          coverImage {
+            extraLarge
+          }
+          description
+          averageScore
+        }
+      }
+    `;
+    const variables = { id: 123 };
+
+    actions.fetchAnimeDetail(null, variables);
+    expect(actions.$graphql.default.request).toBeCalledWith(query, variables);
+  });
 });
