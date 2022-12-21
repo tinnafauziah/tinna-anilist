@@ -1,6 +1,5 @@
 import defaultLayout from '~/layouts/default';
 
-let store;
 const mocks = {
   $router: {
     push: jest.fn(),
@@ -9,7 +8,7 @@ const mocks = {
 
 describe('Layout Default', () => {
   const mockPage = () => {
-    return global.shallowMount(defaultLayout, { store, mocks });
+    return global.shallowMount(defaultLayout, { mocks });
   };
   it('should layout page match snapshot', () => {
     const wrapper = mockPage();
