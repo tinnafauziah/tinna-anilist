@@ -4,10 +4,10 @@
 <script>
 export default {
   async mounted() {
-    const { code } = this.$route.query;
-    if (!code) this.goToHomepage();
+    const { hash } = this.$route;
+    if (!hash) this.goToHomepage();
     else {
-      await this.$store.dispatch("auth/saveCode", code);
+      await this.$store.dispatch("auth/saveToken", hash);
       this.goToHomepage();
     }
   },

@@ -1,7 +1,9 @@
 export const actions = {
-  async saveCode(_, code) {
-    if (!localStorage.getItem('code') || localStorage.getItem('code') !== code) {
-      localStorage.setItem('code', code);
+  async saveToken(_, hash) {
+    const hashArray = hash.split('&');
+    const tokenArray = hashArray[0].split('=');
+    if (!localStorage.getItem('token') || localStorage.getItem('token') !== tokenArray[1]) {
+      localStorage.setItem('token', tokenArray[1]);
     }
   },
 }

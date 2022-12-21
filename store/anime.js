@@ -58,8 +58,9 @@ export const actions = {
       }
     `;
 
-    const animes = await this.$graphql.default.request(query, variables);
-    return animes;
+    const anime = await this.$graphql.default.request(query, variables);
+
+    return anime;
   },
 }
 export default {

@@ -4,17 +4,19 @@ describe('Store: auth', () => {
     jest.clearAllMocks();
   });
   const localStorageSetMock = jest.spyOn(localStorage.__proto__, 'setItem');
-  it.each([[null], ['code1']])('should call requestToken properly with localStorage: %s', (code) => {
-    const newCode = 'code2';
-    jest.spyOn(localStorage.__proto__, 'getItem').mockReturnValue(code);
-    actions.saveCode(null, newCode);
+  it.each([[null], ['eyJ0eXAiOiA']])('should call requestToken properly with localStorage: %s', (token) => {
+    const newHash = '#access_token=eyJ0eXAiOiJ&expired=123';
+    const newToken = 'eyJ0eXAiOiJ';
+    jest.spyOn(localStorage.__proto__, 'getItem').mockReturnValue(token);
+    actions.saveToken(null, newHash);
 
-    expect(localStorageSetMock).toBeCalledWith('code', newCode);
+    expect(localStorageSetMock).toBeCalledWith('token', newToken);
   });
   it('should not call requestToken properly when localStorage code is already exist or fetch same code %s', () => {
-    const existingCode = 'code1';
-    jest.spyOn(localStorage.__proto__, 'getItem').mockReturnValue(existingCode);
-    actions.saveCode(null, existingCode);
+    const newHash = '#access_token=eyJ0eXAiOiL&expired=123';
+    const existingToken = 'eyJ0eXAiOiL';
+    jest.spyOn(localStorage.__proto__, 'getItem').mockReturnValue(existingToken);
+    actions.saveToken(null, newHash);
 
     expect(localStorageSetMock).not.toBeCalled();
   });
