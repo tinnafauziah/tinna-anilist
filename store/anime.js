@@ -1,10 +1,5 @@
 import { gql } from 'nuxt-graphql-request';
 
-export const state = {
-  currentRoute: 'refreshedRoute',
-  lastRoute: 'refreshedRoute',
-  user: '',
-}
 export const actions = {
   async fetchAnimeList(_, variables) {
     const query = gql`

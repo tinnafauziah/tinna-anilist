@@ -1,9 +1,9 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  target: 'static', // default is 'server'
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    target: 'static', // default is 'server'
     titleTemplate: '%s - tinna-anilist',
     title: 'tinna-anilist',
     htmlAttrs: {
