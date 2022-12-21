@@ -1,33 +1,6 @@
 <template lang="pug">
 .index-anime
-  .display-2.mb-4 Search Anime
-  v-layout(wrap)
-    v-flex.xs4
-      v-select(
-        v-model='selectedGenres',
-        :items='genres',
-        label='Pilih genre',
-        outlined,
-        multiple
-        )
-        template(v-slot:selection='{ item, index }')
-          v-chip(v-if='index < showedGenresLength')
-            span {{ item }}
-          span.grey--text.ml-1(v-if='index === showedGenresLength') (+{{ selectedGenres.length - showedGenresLength }} others)
-    v-flex.xs4.ml-2
-      v-select(
-        v-model='selectedSort',
-        :items='sorts',
-        label='Sorted by',
-        outlined,
-        item-text='text',
-        item-value='value'
-      )
-    v-flex.xs1.ml-4.mr-6
-      v-btn(color='teal accent-4', x-large, @click='fetchAnimeList()') Search
-    v-spacer
-    v-flex.ml-6
-      v-btn(color='teal accent-4', x-large, @click='$router.push("bookmark/")') Bookmarked Anime
+  .display-2.mb-4 Bookmarked Anime
   v-layout.scroll_container(wrap, @scroll='handleScroll(debounceLoadAnimeList)')
     template(v-if='isFirstLoading')
       v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
@@ -68,37 +41,19 @@ export default {
   mixins: [humanizeAnimeString],
   data() {
     return {
-      genres: [],
       isLoadingAnimeList: false,
       isFirstLoading: false,
       isLazyLoading: false,
       hasNextPage: false,
-      showedGenresLength: 3,
-      sorts: [
-        {
-          text: "Trending",
-          value: "TRENDING_DESC",
-        },
-      ],
-      selectedGenres: [],
-      selectedSort: "TRENDING_DESC",
       animes: [],
       page: 1,
     };
   },
   async mounted() {
-    this.fetchGenres();
-    this.fetchAnimeList();
+    this.fetchAnimeBookmarks();
   },
   methods: {
-    async fetchGenres() {
-      try {
-        const response = await this.$store.dispatch("anime/fetchGenres");
-        this.genres = [...this.genres, ...response.GenreCollection];
-      } finally {
-      }
-    },
-    async fetchAnimeList(isFirst = true) {
+    async fetchAnimeBookmarks(isFirst = true) {
       if (isFirst) {
         this.isFirstLoading = true;
         this.page = 1;
@@ -111,17 +66,16 @@ export default {
         sort: this.selectedSort,
       };
 
-      if (this.selectedGenres.length > 0)
-        variables = { ...variables, genre_in: this.selectedGenres };
-
       try {
         const response = await this.$store.dispatch(
-          "anime/fetchAnimeList",
+          "anime/fetchAnimeBookmarks",
           variables
         );
-        const { media, pageInfo } = response.Page;
 
-        this.animes = [...this.animes, ...media];
+        console.log(response.Viewer.favourites.anime);
+        const { nodes, pageInfo } = response.Viewer.favourites.anime;
+
+        this.animes = [...this.animes, ...nodes];
         this.isFirstLoading = true;
         this.hasNextPage = pageInfo.hasNextPage;
         this.page += 1;
@@ -150,7 +104,7 @@ export default {
       { maxWait: 1000 }
     ),
     redirectAnimeDetail(anime) {
-      this.$router.push(`anime/${anime.id}`);
+      this.$router.push(`/anime/${anime.id}`);
     },
   },
 };

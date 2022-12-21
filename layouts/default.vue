@@ -4,7 +4,12 @@ v-app
     v-app-bar(color='indigo lighten-4', v-if='!isAuthorizeRoute()')
       v-toolbar-title.toolbar-title(@click='$router.push("/")') Anime List
       v-spacer
-      v-menu(offset-y, v-if='currentUser')
+      v-skeleton-loader(
+        v-if='isLoadingCurrentUser',
+        class='mx-auto',
+        type='button'
+      )
+      v-menu(offset-y, v-else-if='currentUser')
         template(v-slot:activator="{ on, attrs }")
           v-btn(
             color="primary",
@@ -30,6 +35,7 @@ export default {
   },
   data() {
     return {
+      isLoadingCurrentUser: true,
       nodeEnvOauthUrl: {
         production:
           "https://anilist.co/api/v2/oauth/authorize?client_id=10464&response_type=token",
@@ -38,8 +44,12 @@ export default {
       },
     };
   },
-  mounted() {
-    this.$store.dispatch("users/fetchCurrentUser");
+  async mounted() {
+    try {
+      await this.$store.dispatch("users/fetchCurrentUser");
+    } finally {
+      this.isLoadingCurrentUser = false;
+    }
   },
   methods: {
     loginWithAnilist() {
