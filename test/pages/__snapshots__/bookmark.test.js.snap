@@ -14,68 +14,9 @@ exports[`Bookmark Page should bookmark page match snapshot 1`] = `
     tag="div"
     wrap="wrap"
   >
-    <v-card-stub
-      class="mb-4 mr-4 anime_detail_card"
-      loaderheight="4"
-      tag="div"
-      width="350"
-    >
-      <v-img-stub
-        height="400"
-        options="[object Object]"
-        position="center center"
-        src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127230-FlochcFsyoF4.png"
-        transition="fade-transition"
-      />
-      <v-card-text-stub
-        tag="div"
-      >
-        <div
-          class="subtitle-1 font-weight-bold mb-1"
-        >
-          Chainsaw Man
-        </div>
-        <v-layout-stub
-          align-center="align-center"
-          tag="div"
-          wrap="wrap"
-        >
-          <v-flex-stub
-            class="xs1 mr-1"
-            tag="div"
-          >
-            <v-icon-stub
-              color="green"
-            >
-              mdi-emoticon-excited-outline
-            </v-icon-stub>
-          </v-flex-stub>
-          <v-flex-stub
-            class="xs10"
-            tag="div"
-          >
-            <span
-              class="subtitle-1"
-            >
-              86%
-            </span>
-          </v-flex-stub>
-        </v-layout-stub>
-      </v-card-text-stub>
-      <v-card-actions-stub
-        tag="div"
-      >
-        <v-btn-stub
-          activeclass=""
-          color="teal accent-4"
-          tag="button"
-          text="true"
-          type="button"
-        >
-          Detail
-        </v-btn-stub>
-      </v-card-actions-stub>
-    </v-card-stub>
+    <animecard-stub
+      anime="[object Object]"
+    />
     <!---->
   </v-layout-stub>
 </div>

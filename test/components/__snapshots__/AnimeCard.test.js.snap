@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anime Index Page should anime Index page match snapshot 1`] = `
+<v-card-stub
+  class="mb-4 mr-4 anime_card"
+  loaderheight="4"
+  tag="div"
+  width="350"
+>
+  <v-img-stub
+    height="400"
+    options="[object Object]"
+    position="center center"
+    src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127230-FlochcFsyoF4.png"
+    transition="fade-transition"
+  />
+  <v-card-text-stub
+    tag="div"
+  >
+    <div
+      class="subtitle-1 font-weight-bold mb-1"
+    >
+      Chainsaw Man
+    </div>
+    <v-layout-stub
+      align-center="align-center"
+      tag="div"
+      wrap="wrap"
+    >
+      <v-flex-stub
+        class="xs1 mr-1"
+        tag="div"
+      >
+        <v-icon-stub
+          color="green"
+        >
+          mdi-emoticon-excited-outline
+        </v-icon-stub>
+      </v-flex-stub>
+      <v-flex-stub
+        class="xs10 mb-1"
+        tag="div"
+      >
+        <span
+          class="subtitle-1"
+        >
+          86%
+        </span>
+      </v-flex-stub>
+      <v-flex-stub
+        class="xs10"
+        tag="div"
+      >
+        <v-chip-stub
+          active="true"
+          activeclass=""
+          closeicon="$delete"
+          closelabel="$vuetify.close"
+          filtericon="$complete"
+          tag="span"
+        >
+          Action
+        </v-chip-stub>
+        <v-chip-stub
+          active="true"
+          activeclass=""
+          closeicon="$delete"
+          closelabel="$vuetify.close"
+          filtericon="$complete"
+          tag="span"
+        >
+          Comedy
+        </v-chip-stub>
+        <v-chip-stub
+          active="true"
+          activeclass=""
+          closeicon="$delete"
+          closelabel="$vuetify.close"
+          filtericon="$complete"
+          tag="span"
+        >
+          Drama
+        </v-chip-stub>
+        <v-chip-stub
+          active="true"
+          activeclass=""
+          closeicon="$delete"
+          closelabel="$vuetify.close"
+          filtericon="$complete"
+          tag="span"
+        >
+          Horror
+        </v-chip-stub>
+        <v-chip-stub
+          active="true"
+          activeclass=""
+          closeicon="$delete"
+          closelabel="$vuetify.close"
+          filtericon="$complete"
+          tag="span"
+        >
+          Supernatural
+        </v-chip-stub>
+      </v-flex-stub>
+    </v-layout-stub>
+  </v-card-text-stub>
+</v-card-stub>
+`;
+
+exports[`Anime Index Page should anime Index page match snapshot by default anime props 1`] = `
+<v-card-stub
+  class="mb-4 mr-4 anime_card"
+  loaderheight="4"
+  tag="div"
+  width="350"
+>
+  <v-img-stub
+    height="400"
+    options="[object Object]"
+    position="center center"
+    transition="fade-transition"
+  />
+  <v-card-text-stub
+    tag="div"
+  >
+    <div
+      class="subtitle-1 font-weight-bold mb-1"
+    >
+      
+    </div>
+    <v-layout-stub
+      align-center="align-center"
+      tag="div"
+      wrap="wrap"
+    >
+      <v-flex-stub
+        class="xs1 mr-1"
+        tag="div"
+      >
+        <v-icon-stub
+          color="gray"
+        >
+          mdi-emoticon-neutral-outline
+        </v-icon-stub>
+      </v-flex-stub>
+      <v-flex-stub
+        class="xs10 mb-1"
+        tag="div"
+      >
+        <span
+          class="subtitle-1"
+        >
+          belum ada penilaian
+        </span>
+      </v-flex-stub>
+      <v-flex-stub
+        class="xs10"
+        tag="div"
+      />
+    </v-layout-stub>
+  </v-card-text-stub>
+</v-card-stub>
+`;
