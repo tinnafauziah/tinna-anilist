@@ -37,17 +37,7 @@
           type='card'
         )
     template(v-else)
-      v-card.mb-4.mr-4.anime_detail_card(v-for='anime in animes', width='350', :key='anime.id', @click='redirectAnimeDetail(anime)')
-        v-img(height='400', :src='anime.coverImage.large')
-        v-card-text
-          .subtitle-1.font-weight-bold.mb-1 {{ anime.title | animeTitle }}
-          v-layout(wrap, align-center)
-            v-flex.xs1.mr-1
-              v-icon(:color='getRatingColor(anime.averageScore)') {{ getRatingIcon(anime.averageScore) }}
-            v-flex.xs10.mb-1
-              span.subtitle-1 {{ anime.averageScore | animeAverageScore }}
-            v-flex.xs10
-              v-chip(v-for='genre in anime.genres', :key="genre") {{ genre }}
+      AnimeCard(v-for='anime in animes', :anime='anime', :key='anime.id')
     template(v-if='hasNextPage')
       v-card.mb-4.mr-4(v-for='index in 8' :key='index', width='350')
           v-skeleton-loader(
@@ -61,10 +51,12 @@
 <script>
 import { debounce } from "lodash-es";
 import humanizeAnimeString from "~/mixins/humanize-anime-string";
+import AnimeCard from "~/components/AnimeCard";
 
 export default {
   name: "IndexPage",
-  mixins: [humanizeAnimeString],
+  components: { AnimeCard },
+  mixins: [humanizeAnimeString, AnimeCard],
   data() {
     return {
       genres: [],
@@ -148,15 +140,12 @@ export default {
       500,
       { maxWait: 1000 }
     ),
-    redirectAnimeDetail(anime) {
-      this.$router.push(`/anime/${anime.id}`);
-    },
   },
 };
 </script>
 <style lang="scss" scoped>
 .scroll_container {
   overflow: scroll;
-  height: 586px;
+  height: 800px;
 }
 </style>

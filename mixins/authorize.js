@@ -1,4 +1,4 @@
-const humanizeAnimeString = {
+const authorize = {
   data() {
     return {
       nodeEnvOauthUrl: {
@@ -23,4 +23,4 @@ const humanizeAnimeString = {
   }
 };
 
-export default humanizeAnimeString;
+export default authorize;
