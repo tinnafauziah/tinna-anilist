@@ -35,7 +35,7 @@
           type='card'
         )
     template(v-else)
-      v-card.mb-4.mr-4(v-for='anime in animes', width='350', :key='anime.id', @click='redirectAnimeDetail(anime)')
+      v-card.mb-4.mr-4.anime_detail_card(v-for='anime in animes', width='350', :key='anime.id', @click='redirectAnimeDetail(anime)')
         v-img(height='400', :src='anime.coverImage.large')
         v-card-text
           .subtitle-1.font-weight-bold.mb-1 {{ anime.title | animeTitle }}
@@ -142,7 +142,7 @@ export default {
       { maxWait: 1000 },
     ),
     redirectAnimeDetail(anime) {
-      this.$router.push(`anime/${anime.id}`)
+      this.$router.push(`anime/${anime.id}`);
     }
   }
 }

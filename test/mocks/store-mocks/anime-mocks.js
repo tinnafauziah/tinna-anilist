@@ -1,4 +1,5 @@
 import Page from '~/test/mocks/api-mocks/anime-list';
+import Media from '~/test/mocks/api-mocks/anime-detail';
 
 const animeMock = {
   anime: {
@@ -29,6 +30,7 @@ const animeMock = {
           'Thriller'
         ]
       }),
+      fetchAnimeDetail: jest.fn().mockReturnValue({ Media }),
     },
     namespaced: true,
   },

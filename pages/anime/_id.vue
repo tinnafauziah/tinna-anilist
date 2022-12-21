@@ -22,7 +22,7 @@
         )
     template(v-else)
       v-flex.xs3.mr-3
-        v-img(:src='media?.coverImage?.extraLarge')
+        v-img(:src='media.coverImage.extraLarge')
         v-layout(wrap, align-center)
           v-flex.xs1.mr-1
             v-icon(:color='getRatingColor(media.averageScore)') {{ getRatingIcon(media.averageScore) }}
@@ -52,17 +52,19 @@ export default {
     async fetchAnimeDetail() {
       if(this.$route?.params?.id) {
           let variables = {
-          id: this.$route.params.id,
-        };
-        try {
-          this.isLoadingMedia = true;
-          const response = await this.$store.dispatch('anime/fetchAnimeDetail', variables);
-          this.media = { ...response.Media };
-        } finally {
+            id: this.$route.params.id,
+          };
+          try {
+            this.isLoadingMedia = true;
+            const response = await this.$store.dispatch('anime/fetchAnimeDetail', variables);
+            this.media = { ...response.Media };
+          } finally {
+            this.isLoadingMedia = false;
+          }
+        } else {
           this.isLoadingMedia = false;
         }
-      }
-    },
+      },
   }
 }
 </script>
