@@ -25,8 +25,17 @@
       )
     v-flex.ml-2
       v-btn(color='teal accent-4', x-large, @click='fetchAnimeList()') Cari
-  v-layout(wrap)
-      v-card.mb-4.mr-4(v-for='anime in animes', width='275', :key='anime.id')
+  v-layout.scroll_container(wrap, @scroll='handleScroll(debounceLoadAnimeList)')
+    template(v-if='isFirstLoading')
+      v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
+        v-skeleton-loader(
+          class='mx-auto',
+          height='540',
+          width='350',
+          type='card'
+        )
+    template(v-else)
+      v-card.mb-4.mr-4(v-for='anime in animes', width='350', :key='anime.id')
         v-img(height='400', :src='anime.coverImage.large')
         v-card-text
           .subtitle-1.font-weight-bold.mb-1 {{ anime.title | animeTitle }}
@@ -35,17 +44,30 @@
               v-icon(:color='getRatingColor(anime.averageScore)') {{ getRatingIcon(anime.averageScore) }}
             v-flex.xs10
               span.subtitle-1 {{ anime.averageScore | animeAverageScore }}
-        //- TODO: Uncomment this when the detail page already created
-        //- v-card-actions
-        //-   v-btn(text, color='teal accent-4') Detail
+        v-card-actions
+          v-btn(text, color='teal accent-4') Detail
+    template(v-if='hasNextPage')
+      v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
+          v-skeleton-loader(
+            class='mx-auto'
+            height='540',
+            width='350',
+            type='card'
+          )
 </template>
 
 <script>
+import { debounce } from 'lodash-es';
+
 export default {
   name: 'IndexPage',
   data () {
     return {
       genres: [],
+      isLoadingAnimeList: false,
+      isFirstLoading: false,
+      isLazyLoading: false,
+      hasNextPage: false,
       sorts: [
         {
           text: 'Trending',
@@ -77,6 +99,7 @@ export default {
       selectedGenres: [],
       selectedSort: 'TRENDING_DESC',
       animes: [],
+      page: 1,
     }
   },
   async mounted() {
@@ -88,7 +111,8 @@ export default {
       return title?.english || title?.romaji;
     },
     animeAverageScore(averageScore) {
-      return averageScore || 'belum ada penilaian';
+      if(averageScore) return `${averageScore}%`
+      return 'belum ada penilaian';
     },
   },
   methods: {
@@ -99,8 +123,16 @@ export default {
       }
       finally {}
     },
-    async fetchAnimeList() {
+    async fetchAnimeList(isFirst = true) {
+      if (isFirst) {
+        this.isFirstLoading = true;
+        this.page = 1;
+        this.animes = [];
+      } else this.isLazyLoading = true;
+
       let variables = {
+        page: this.page,
+        perPage: 40,
         sort: this.selectedSort
       };
 
@@ -109,8 +141,15 @@ export default {
       try {
         const response = await this.$store.dispatch('anime/fetchAnimeList', variables);
         const { media, pageInfo } = response.Page;
-        this.animes = media;
-      } finally {}
+
+        this.animes = [...this.animes, ...media];
+        this.isFirstLoading = true;
+        this.hasNextPage = pageInfo.hasNextPage;
+        this.page += 1;
+      } finally {
+        this.isLazyLoading = false;
+        this.isFirstLoading = false;
+      }
     },
     getSelectedRating(averageScore) {
       const rateFloorArray = Object.keys(this.rateFloorDict).reverse()
@@ -125,6 +164,30 @@ export default {
       const rate = this.getSelectedRating(averageScore);
       return rate.icon;
     },
+    handleScroll(debounceLoadFunction) {
+      const selectedContainer = document.querySelector('.scroll_container');
+      if (
+        selectedContainer &&
+        selectedContainer.scrollHeight <= selectedContainer.scrollTop + selectedContainer.offsetHeight + 0.5
+      ) {
+        debounceLoadFunction();
+      }
+    },
+    debounceLoadAnimeList: debounce(
+      function load() {
+        this.isLastData = !this.isFirstLoading && !this.hasNextPage;
+        if (this.isLazyLoading || !this.hasNextPage) return;
+        this.fetchAnimeList(false);
+      },
+      500,
+      { maxWait: 1000 },
+    ),
   }
 }
 </script>
+<style lang="scss" scoped>
+.scroll_container {
+  overflow: scroll;
+  height: 586px;
+}
+</style>
