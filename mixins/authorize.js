@@ -24,7 +24,6 @@ const authorize = {
       if (process.browser) {
         localStorage.removeItem("token");
         this.$store.dispatch('users/clearCurrentUser');
-        console.log(localStorage.getItem("token"));
       }
     }
   }
