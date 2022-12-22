@@ -49,8 +49,8 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 import { debounce } from "lodash-es";
+import { mapGetters } from "vuex";
 import humanizeAnimeString from "~/mixins/humanize-anime-string";
 import AnimeCard from "~/components/AnimeCard";
 

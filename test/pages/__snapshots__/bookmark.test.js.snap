@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Bookmark Page should bookmark page match snapshot 1`] = `
+exports[`Bookmark Page should bookmark page match snapshot, based on current user : { View: [Object] } 1`] = `
 <div
   class="index-anime"
 >
@@ -17,6 +17,25 @@ exports[`Bookmark Page should bookmark page match snapshot 1`] = `
     <animecard-stub
       anime="[object Object]"
     />
+    <!---->
+  </v-layout-stub>
+</div>
+`;
+
+exports[`Bookmark Page should bookmark page match snapshot, based on current user : null 1`] = `
+<div
+  class="index-anime"
+>
+  <div
+    class="display-2 mb-4"
+  >
+    Bookmarked Anime
+  </div>
+  <v-layout-stub
+    class="scroll_container"
+    tag="div"
+    wrap="wrap"
+  >
     <!---->
   </v-layout-stub>
 </div>

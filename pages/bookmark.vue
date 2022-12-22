@@ -24,6 +24,7 @@
 
 <script>
 import { debounce } from "lodash-es";
+import { mapGetters } from "vuex";
 import humanizeAnimeString from "~/mixins/humanize-anime-string";
 import AnimeCard from "~/components/AnimeCard";
 
@@ -41,8 +42,16 @@ export default {
       page: 1,
     };
   },
+  computed: {
+    ...mapGetters({
+      currentUser: "users/getCurrentUser",
+    }),
+  },
   async mounted() {
-    this.fetchAnimeBookmarks();
+    if (!this.currentUser) this.$router.push("/");
+    else {
+      this.fetchAnimeBookmarks();
+    }
   },
   methods: {
     async fetchAnimeBookmarks(isFirst = true) {
