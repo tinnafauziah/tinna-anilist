@@ -4,22 +4,17 @@
   v-layout.scroll_container(wrap, @scroll='handleScroll(debounceLoadAnimeList)')
     template(v-if='isFirstLoading')
       v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
-        v-skeleton-loader(
-          class='mx-auto',
-          height='540',
-          width='350',
-          type='card'
-        )
-    template(v-else)
+        SkeletonAnimeCard(v-for="index in 8" :key="index", width='350')
+    template(v-else-if='animes.length > 0')
       AnimeCard(v-for='anime in animes', :anime='anime', :key='anime.id')
+    template(v-else)
+      div
+        .title-1.mb-2 You don't have any bookmarked Anime yet
+        .subtitle-1 Check out
+          span &nbsp;
+            NuxtLink(to='/') Anime List !
     template(v-if='hasNextPage')
-      v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
-          v-skeleton-loader(
-            class='mx-auto'
-            height='540',
-            width='350',
-            type='card'
-          )
+      SkeletonAnimeCard(v-for="index in 8" :key="index", width='350')
 </template>
 
 <script>
@@ -27,11 +22,12 @@ import { debounce } from "lodash-es";
 import { mapGetters } from "vuex";
 import humanizeAnimeString from "~/mixins/humanize-anime-string";
 import AnimeCard from "~/components/AnimeCard";
+import SkeletonAnimeCard from "~/components/SkeletonAnimeCard";
 
 export default {
   name: "BookmarkPage",
   mixins: [humanizeAnimeString],
-  components: { AnimeCard },
+  components: { AnimeCard, SkeletonAnimeCard },
   data() {
     return {
       isLoadingAnimeList: false,

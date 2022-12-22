@@ -54,7 +54,7 @@ exports[`Index Page should index page match snapshot 1`] = `
         errormessages=""
         itemcolor="primary"
         itemdisabled="disabled"
-        items="[object Object]"
+        items="[object Object],[object Object],[object Object],[object Object]"
         itemtext="text"
         itemvalue="value"
         label="Sorted by"
@@ -66,7 +66,7 @@ exports[`Index Page should index page match snapshot 1`] = `
         rules=""
         successmessages=""
         type="text"
-        value="TRENDING_DESC"
+        value="ID"
         valuecomparator="[Function]"
       />
     </v-flex-stub>
@@ -93,12 +93,20 @@ exports[`Index Page should index page match snapshot 1`] = `
     >
       <v-btn-stub
         activeclass=""
-        color="teal accent-4"
+        color="teal lighten-4"
         tag="button"
         type="button"
         xlarge="true"
       >
-        Bookmarked Anime
+        <v-icon-stub
+          dark="dark"
+          left="left"
+        >
+          mdi-bookmark
+        </v-icon-stub>
+        <span>
+          Bookmark Anime List
+        </span>
       </v-btn-stub>
     </v-flex-stub>
   </v-layout-stub>
@@ -128,6 +136,7 @@ exports[`Index Page should index page match snapshot 1`] = `
     <animecard-stub
       anime="[object Object]"
     />
+    <!---->
     <!---->
   </v-layout-stub>
 </div>
