@@ -8,7 +8,7 @@ exports[`Layout Default should layout page match snapshot when current user is {
     tag="main"
   >
     <v-app-bar-stub
-      color="indigo lighten-4"
+      color="cyan lighten-2"
       extensionheight="48"
       src=""
       tag="header"
@@ -30,7 +30,9 @@ exports[`Layout Default should layout page match snapshot when current user is {
       </div>
       <v-btn-stub
         activeclass=""
+        color="teal darken-4"
         tag="button"
+        text="true"
         type="button"
       >
         Logout
@@ -51,7 +53,7 @@ exports[`Layout Default should layout page match snapshot when current user is n
     tag="main"
   >
     <v-app-bar-stub
-      color="indigo lighten-4"
+      color="cyan lighten-2"
       extensionheight="48"
       src=""
       tag="header"
@@ -68,7 +70,9 @@ exports[`Layout Default should layout page match snapshot when current user is n
       />
       <v-btn-stub
         activeclass=""
+        color="teal darken-4"
         tag="button"
+        text="true"
         type="button"
       >
         Login with Anilist
@@ -89,7 +93,7 @@ exports[`Layout Default should layout page match snapshot when page is / 1`] = `
     tag="main"
   >
     <v-app-bar-stub
-      color="indigo lighten-4"
+      color="cyan lighten-2"
       extensionheight="48"
       src=""
       tag="header"
@@ -111,7 +115,9 @@ exports[`Layout Default should layout page match snapshot when page is / 1`] = `
       </div>
       <v-btn-stub
         activeclass=""
+        color="teal darken-4"
         tag="button"
+        text="true"
         type="button"
       >
         Logout
@@ -132,7 +138,7 @@ exports[`Layout Default should layout page match snapshot when page is /authoriz
     tag="main"
   >
     <v-app-bar-stub
-      color="indigo lighten-4"
+      color="cyan lighten-2"
       extensionheight="48"
       src=""
       tag="header"
@@ -154,7 +160,9 @@ exports[`Layout Default should layout page match snapshot when page is /authoriz
       </div>
       <v-btn-stub
         activeclass=""
+        color="teal darken-4"
         tag="button"
+        text="true"
         type="button"
       >
         Logout

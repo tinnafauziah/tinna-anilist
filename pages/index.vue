@@ -1,12 +1,4 @@
 <template lang="pug">
-mixin skeletonLoaderCard
-  v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
-    v-skeleton-loader(
-      class='mx-auto',
-      height='540',
-      width='350',
-      type='card'
-    )
 .index-anime
   .display-2.mb-4 Search Anime
   v-layout(wrap)
@@ -34,14 +26,23 @@ mixin skeletonLoaderCard
       v-btn(color='teal accent-4', x-large, @click='fetchAnimeList()') Search
     v-spacer
     v-flex.ml-6
-      v-btn(v-if='currentUser', color='teal accent-4', x-large, @click='$router.push("/bookmark/")') Bookmarked Anime
+      v-btn(v-if='currentUser', color='teal lighten-4', x-large, @click='$router.push("/bookmark/")')
+        v-icon(left, dark) mdi-bookmark
+        span Bookmark Anime List
   v-layout.scroll_container(wrap, @scroll='handleScroll(debounceLoadAnimeList)')
     template(v-if='isFirstLoading')
-      +skeletonLoaderCard
-    template(v-else)
+      SkeletonAnimeCard(v-for="index in 8" :key="index", width='350')
+    template(v-else-if='animes.length > 0')
       AnimeCard(v-for='anime in animes', :anime='anime', :key='anime.id')
+    template(v-else)
+      div
+        .title-1.mb-2 Anime not found
+        .subtitle-1 Try another genre or sort!
+          span &nbsp;
+            NuxtLink(to='/') Anime List !
     template(v-if='hasNextPage')
-      +skeletonLoaderCard
+    template(v-if='hasNextPage')
+      SkeletonAnimeCard(v-for="index in 8" :key="index", width='350')
 </template>
 
 <script>
@@ -49,10 +50,11 @@ import { debounce } from "lodash-es";
 import { mapGetters } from "vuex";
 import humanizeAnimeString from "~/mixins/humanize-anime-string";
 import AnimeCard from "~/components/AnimeCard";
+import SkeletonAnimeCard from "~/components/SkeletonAnimeCard";
 
 export default {
   name: "IndexPage",
-  components: { AnimeCard },
+  components: { AnimeCard, SkeletonAnimeCard },
   mixins: [humanizeAnimeString, AnimeCard],
   computed: {
     ...mapGetters({

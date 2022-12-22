@@ -1,7 +1,7 @@
 <template lang="pug">
 v-app
   v-main
-    v-app-bar(color='indigo lighten-4', v-if='!isAuthorizeRoute()')
+    v-app-bar(color='cyan lighten-2', v-if='!isAuthorizeRoute()')
       v-toolbar-title.toolbar-title(@click='$router.push("/")') Anime List
       v-spacer
       v-skeleton-loader(
@@ -11,8 +11,8 @@ v-app
       )
       template(v-else-if='currentUser')
         .title.mr-4 Hi, {{ currentUser.name }}!
-        v-btn(@click='logout()') Logout
-      v-btn(v-else, @click='loginWithAnilist()') Login with Anilist
+        v-btn(@click='logout()', color='teal darken-4', text) Logout
+      v-btn(v-else, color='teal darken-4', @click='loginWithAnilist()', text) Login with Anilist
     nuxt.mt-8.ml-8
 </template>
 

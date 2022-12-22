@@ -93,12 +93,20 @@ exports[`Index Page should index page match snapshot 1`] = `
     >
       <v-btn-stub
         activeclass=""
-        color="teal accent-4"
+        color="teal lighten-4"
         tag="button"
         type="button"
         xlarge="true"
       >
-        Bookmarked Anime
+        <v-icon-stub
+          dark="dark"
+          left="left"
+        >
+          mdi-bookmark
+        </v-icon-stub>
+        <span>
+          Bookmarked Anime
+        </span>
       </v-btn-stub>
     </v-flex-stub>
   </v-layout-stub>
@@ -128,6 +136,7 @@ exports[`Index Page should index page match snapshot 1`] = `
     <animecard-stub
       anime="[object Object]"
     />
+    <!---->
     <!---->
   </v-layout-stub>
 </div>
