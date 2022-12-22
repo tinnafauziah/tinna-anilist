@@ -30,7 +30,7 @@ const humanizeAnimeString = {
       return title?.english || title?.romaji;
     },
     animeAverageScore(averageScore) {
-      if(averageScore) return `${averageScore}%`
+      if (averageScore) return `${averageScore}%`
       return 'belum ada penilaian';
     },
   },
@@ -48,6 +48,9 @@ const humanizeAnimeString = {
       const rate = this.getSelectedRating(averageScore);
       return rate.icon;
     },
+    getColorText(averageScore) {
+      return `${this.getRatingColor(averageScore)}--text`
+    }
   }
 };
 

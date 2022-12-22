@@ -112,6 +112,6 @@ export default {
 <style lang="scss" scoped>
 .scroll_container {
   overflow: scroll;
-  height: 586px;
+  height: 700px;
 }
 </style>
