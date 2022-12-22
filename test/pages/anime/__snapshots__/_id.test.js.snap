@@ -35,32 +35,6 @@ exports[`Anime Detail Page should anime detail page match snapshot 1`] = `
         src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png"
         transition="fade-transition"
       />
-      <v-layout-stub
-        align-center="align-center"
-        tag="div"
-        wrap="wrap"
-      >
-        <v-flex-stub
-          class="xs1 mr-1"
-          tag="div"
-        >
-          <v-icon-stub
-            color="green"
-          >
-            mdi-emoticon-excited-outline
-          </v-icon-stub>
-        </v-flex-stub>
-        <v-flex-stub
-          class="xs10"
-          tag="div"
-        >
-          <span
-            class="subtitle-1"
-          >
-            86%
-          </span>
-        </v-flex-stub>
-      </v-layout-stub>
     </v-flex-stub>
     <v-flex-stub
       class="xs6"
@@ -89,7 +63,7 @@ One day, Denji is betrayed and killed. As his consciousness fades, he makes a co
       <v-chip-stub
         active="true"
         activeclass=""
-        class="mr-4"
+        class="mr-4 mb-6"
         closeicon="$delete"
         closelabel="$vuetify.close"
         filtericon="$complete"
@@ -100,7 +74,7 @@ One day, Denji is betrayed and killed. As his consciousness fades, he makes a co
       <v-chip-stub
         active="true"
         activeclass=""
-        class="mr-4"
+        class="mr-4 mb-6"
         closeicon="$delete"
         closelabel="$vuetify.close"
         filtericon="$complete"
@@ -111,7 +85,7 @@ One day, Denji is betrayed and killed. As his consciousness fades, he makes a co
       <v-chip-stub
         active="true"
         activeclass=""
-        class="mr-4"
+        class="mr-4 mb-6"
         closeicon="$delete"
         closelabel="$vuetify.close"
         filtericon="$complete"
@@ -122,7 +96,7 @@ One day, Denji is betrayed and killed. As his consciousness fades, he makes a co
       <v-chip-stub
         active="true"
         activeclass=""
-        class="mr-4"
+        class="mr-4 mb-6"
         closeicon="$delete"
         closelabel="$vuetify.close"
         filtericon="$complete"
@@ -133,7 +107,7 @@ One day, Denji is betrayed and killed. As his consciousness fades, he makes a co
       <v-chip-stub
         active="true"
         activeclass=""
-        class="mr-4"
+        class="mr-4 mb-6"
         closeicon="$delete"
         closelabel="$vuetify.close"
         filtericon="$complete"
@@ -141,6 +115,16 @@ One day, Denji is betrayed and killed. As his consciousness fades, he makes a co
       >
         Supernatural
       </v-chip-stub>
+      <div
+        class="subtitle-1 font-weight-bold"
+      >
+        score:
+        <span
+          class="display-2 green--text"
+        >
+           86%
+        </span>
+      </div>
     </v-flex-stub>
   </v-layout-stub>
 </div>

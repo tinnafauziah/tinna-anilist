@@ -35,15 +35,12 @@
     v-layout(wrap)
       v-flex.xs3.mr-3
         v-img(:src='media.coverImage.extraLarge')
-        v-layout(wrap, align-center)
-          v-flex.xs1.mr-1
-            v-icon(:color='getRatingColor(media.averageScore)') {{ getRatingIcon(media.averageScore) }}
-          v-flex.xs10
-            span.subtitle-1 {{ media.averageScore | animeAverageScore }}
       v-flex.xs6
         .title {{ media.title | animeTitle  }}
         .subtitle-1.mb-6(v-html='media.description')
-        v-chip.mr-4(v-for='genre in media.genres', :key="genre") {{ genre }}
+        v-chip.mr-4.mb-6(v-for='genre in media.genres', :key="genre") {{ genre }}
+        .subtitle-1.font-weight-bold score:
+          span.display-2(:class='getColorText(media.averageScore)') &nbsp;{{ media.averageScore | animeAverageScore }}
 </template>
 
 <script>
