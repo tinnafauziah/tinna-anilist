@@ -102,12 +102,8 @@ export default {
       };
       try {
         this.$store.dispatch("anime/addBookmarkAnime", variables);
-        this.snackbarMessage = "Action success";
+        this.snackbarMessage = "Bookmark action success";
         this.snackbar = true;
-      } catch {
-        this.snackbar = true;
-        this.snackbarMessage = "An error occured, Please try again";
-        this.authorize();
       } finally {
       }
     },
