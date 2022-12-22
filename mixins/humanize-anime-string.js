@@ -7,7 +7,7 @@ const humanizeAnimeString = {
           icon: 'mdi-emoticon-excited-outline',
         },
         61: {
-          color: 'yellow',
+          color: 'amber',
           icon: 'mdi-emoticon-happy-outline',
         },
         41: {
@@ -15,7 +15,7 @@ const humanizeAnimeString = {
           icon: 'mdi-emoticon-neutral-outline',
         },
         21: {
-          color: 'orange',
+          color: 'deep-orange',
           icon: 'mdi-emoticon-sad-outline',
         },
         0: {
@@ -31,7 +31,7 @@ const humanizeAnimeString = {
     },
     animeAverageScore(averageScore) {
       if (averageScore) return `${averageScore}%`
-      return 'belum ada penilaian';
+      return 'no score yet';
     },
   },
   methods: {
