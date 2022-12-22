@@ -9,16 +9,9 @@ v-app
         class='mx-auto',
         type='button'
       )
-      v-menu(offset-y, v-else-if='currentUser')
-        template(v-slot:activator="{ on, attrs }")
-          v-btn(
-            color="primary",
-            dark,
-            v-bind="attrs",
-            v-on="on") Hi, {{ currentUser.name }}!
-        v-list
-          v-list-item
-            v-list-item-title Logout
+      template(v-else-if='currentUser')
+        .title.mr-4 Hi, {{ currentUser.name }}!
+        v-btn(@click='logout()') Logout
       v-btn(v-else, @click='loginWithAnilist()') Login with Anilist
     nuxt.mt-8.ml-8
 </template>
@@ -57,7 +50,7 @@ export default {
   },
   methods: {
     isAuthorizeRoute() {
-      this.$route.path === "/authorize";
+      return this.$route.path.includes("/authorize");
     },
   },
 };

@@ -12,7 +12,7 @@ const authorize = {
   methods: {
     authorize() {
       if (process.browser) {
-        localStorage.setItem("token", null);
+        localStorage.removeItem("token");
         this.loginWithAnilist();
       }
     },
@@ -20,6 +20,13 @@ const authorize = {
       const nodeEnv = process.env.NODE_ENV;
       window.location.replace(this.nodeEnvOauthUrl[nodeEnv]);
     },
+    logout() {
+      if (process.browser) {
+        localStorage.removeItem("token");
+        this.$store.dispatch('users/clearCurrentUser');
+        console.log(localStorage.getItem("token"));
+      }
+    }
   }
 };
 

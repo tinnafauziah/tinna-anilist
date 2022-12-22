@@ -1,6 +1,7 @@
 import flushPromises from 'flush-promises';
 import index from '~/pages/index';
 import animeMock from '~/test/mocks/store-mocks/anime-mocks';
+import userMock from '~/test/mocks/store-mocks/user-mocks';
 
 let store;
 const mocks = {
@@ -8,7 +9,7 @@ const mocks = {
     push: jest.fn(),
   },
 };
-const modules = { ...animeMock };
+const modules = { ...animeMock, ...userMock };
 
 describe('Index Page', () => {
   const mockPage = () => {

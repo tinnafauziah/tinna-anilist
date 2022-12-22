@@ -41,4 +41,8 @@ describe('Store: anime', () => {
     actions.fetchCurrentUser({ commit }, {});
     expect(actions.$graphql.default.request).toBeCalledWith(query, {}, headers);
   });
+  it('should call actions fetchCurrentUser properly', () => {
+    actions.clearCurrentUser({ commit }, {});
+    expect(commit).toBeCalledWith('setCurrentUser', null);
+  });
 });

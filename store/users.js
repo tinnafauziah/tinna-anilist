@@ -31,6 +31,9 @@ export const actions = {
     commit('setCurrentUser', user.Viewer);
     return user;
   },
+  async clearCurrentUser({ commit }) {
+    commit('setCurrentUser', null);
+  },
 }
 export default {
   namespace: true,
