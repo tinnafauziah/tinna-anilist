@@ -69,12 +69,24 @@ export default {
       showedGenresLength: 3,
       sorts: [
         {
+          text: "ID",
+          value: "ID",
+        },
+        {
+          text: "Average Score",
+          value: "SCORE_DESC",
+        },
+        {
           text: "Trending",
           value: "TRENDING_DESC",
         },
+        {
+          text: "Popularity",
+          value: "POPULARITY_DESC",
+        },
       ],
       selectedGenres: [],
-      selectedSort: "TRENDING_DESC",
+      selectedSort: "ID",
       animes: [],
       page: 1,
     };

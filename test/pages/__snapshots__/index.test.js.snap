@@ -54,7 +54,7 @@ exports[`Index Page should index page match snapshot 1`] = `
         errormessages=""
         itemcolor="primary"
         itemdisabled="disabled"
-        items="[object Object]"
+        items="[object Object],[object Object],[object Object],[object Object]"
         itemtext="text"
         itemvalue="value"
         label="Sorted by"
@@ -66,7 +66,7 @@ exports[`Index Page should index page match snapshot 1`] = `
         rules=""
         successmessages=""
         type="text"
-        value="TRENDING_DESC"
+        value="ID"
         valuecomparator="[Function]"
       />
     </v-flex-stub>
