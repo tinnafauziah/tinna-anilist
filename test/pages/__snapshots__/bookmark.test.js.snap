@@ -36,24 +36,30 @@ exports[`Bookmark Page should bookmark page match snapshot, based on current use
     tag="div"
     wrap="wrap"
   >
-    <div>
-      <div
-        class="title-1 mb-2"
-      >
-        You don't have any bookmarked Anime yet
-      </div>
-      <div
-        class="subtitle-1"
-      >
-        Check out
-        <span>
-           
-          <a>
-            Anime List !
-          </a>
-        </span>
-      </div>
-    </div>
+    <skeletonanimecard-stub
+      width="350"
+    />
+    <skeletonanimecard-stub
+      width="350"
+    />
+    <skeletonanimecard-stub
+      width="350"
+    />
+    <skeletonanimecard-stub
+      width="350"
+    />
+    <skeletonanimecard-stub
+      width="350"
+    />
+    <skeletonanimecard-stub
+      width="350"
+    />
+    <skeletonanimecard-stub
+      width="350"
+    />
+    <skeletonanimecard-stub
+      width="350"
+    />
     <!---->
   </v-layout-stub>
 </div>

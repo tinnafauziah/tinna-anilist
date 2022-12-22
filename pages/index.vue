@@ -65,7 +65,7 @@ export default {
     return {
       genres: [],
       isLoadingAnimeList: false,
-      isFirstLoading: false,
+      isFirstLoading: true,
       isLazyLoading: false,
       hasNextPage: false,
       showedGenresLength: 3,
