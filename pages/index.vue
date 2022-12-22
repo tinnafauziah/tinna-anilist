@@ -26,7 +26,7 @@
       v-btn(color='teal accent-4', x-large, @click='fetchAnimeList()') Search
     v-spacer
     v-flex.ml-6
-      v-btn(color='teal accent-4', x-large, @click='$router.push("/bookmark/")') Bookmarked Anime
+      v-btn(v-if='currentUser', color='teal accent-4', x-large, @click='$router.push("/bookmark/")') Bookmarked Anime
   v-layout.scroll_container(wrap, @scroll='handleScroll(debounceLoadAnimeList)')
     template(v-if='isFirstLoading')
       v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
@@ -49,6 +49,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import { debounce } from "lodash-es";
 import humanizeAnimeString from "~/mixins/humanize-anime-string";
 import AnimeCard from "~/components/AnimeCard";
@@ -57,6 +58,11 @@ export default {
   name: "IndexPage",
   components: { AnimeCard },
   mixins: [humanizeAnimeString, AnimeCard],
+  computed: {
+    ...mapGetters({
+      currentUser: "users/getCurrentUser",
+    }),
+  },
   data() {
     return {
       genres: [],

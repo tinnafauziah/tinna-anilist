@@ -1,8 +1,17 @@
 # tinna-anilist
 
+The Anilist project by Tinna Fauziah Azhar
+
+## Reminder
+
+the Anilist authorization only works when the localhost port is 3000, other than that it won't work
+if you want to access bookmark feature it will be better if you use port 3000
+
 ## Build Setup
 
 ```bash
+# will use v16.19.0
+nvm use
 # install dependencies
 $ yarn install
 
@@ -15,6 +24,9 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+
+# Reminder:
+teh Anilist authorizationonly works when the localhost port is 3000, other than that it won't work
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
@@ -40,7 +52,6 @@ More information about the usage of this directory in [the documentation](https:
 Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
 
 ### `pages`
 
