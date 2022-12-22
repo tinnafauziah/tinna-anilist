@@ -55,7 +55,6 @@ export default {
     logout() {
       localStorage.removeItem("token");
       this.$store.dispatch("users/clearCurrentUser");
-      console.log(this.$route.path);
       if (this.onlyViewerPages.includes(this.$route.path)) {
         this.$router.push("/");
       }
