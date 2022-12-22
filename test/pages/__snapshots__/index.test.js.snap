@@ -105,7 +105,7 @@ exports[`Index Page should index page match snapshot 1`] = `
           mdi-bookmark
         </v-icon-stub>
         <span>
-          Bookmarked Anime
+          Bookmark Anime List
         </span>
       </v-btn-stub>
     </v-flex-stub>
