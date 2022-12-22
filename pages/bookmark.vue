@@ -3,8 +3,7 @@
   .display-2.mb-4 Bookmarked Anime
   v-layout.scroll_container(wrap, @scroll='handleScroll(debounceLoadAnimeList)')
     template(v-if='isFirstLoading')
-      v-card.mb-4.mr-4(v-for="index in 8" :key="index", width='350')
-        SkeletonAnimeCard(v-for="index in 8" :key="index", width='350')
+      SkeletonAnimeCard(v-for="index in 8" :key="index", width='350')
     template(v-else-if='animes.length > 0')
       AnimeCard(v-for='anime in animes', :anime='anime', :key='anime.id')
     template(v-else)
@@ -31,7 +30,7 @@ export default {
   data() {
     return {
       isLoadingAnimeList: false,
-      isFirstLoading: false,
+      isFirstLoading: true,
       isLazyLoading: false,
       hasNextPage: false,
       animes: [],
