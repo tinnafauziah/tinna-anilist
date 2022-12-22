@@ -41,7 +41,9 @@ export default {
   },
   async mounted() {
     try {
-      await this.$store.dispatch("users/fetchCurrentUser");
+      if (localStorage.getItem("token")) {
+        await this.$store.dispatch("users/fetchCurrentUser");
+      }
     } catch {
       this.authorize();
     } finally {
