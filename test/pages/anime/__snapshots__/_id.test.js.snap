@@ -175,3 +175,255 @@ exports[`Anime Detail Page should anime detail page match snapshot when error: {
   </div>
 </div>
 `;
+
+exports[`Anime Detail Page should bookmark page match snapshot, based on current user : { View: [Object] } 1`] = `
+<div
+  class="detail-anime"
+>
+  <v-btn-stub
+    activeclass=""
+    class="mb-3"
+    color="teal accent-4"
+    tag="button"
+    type="button"
+  >
+    Add to bookmarked
+  </v-btn-stub>
+  <v-snackbar-stub
+    contentclass=""
+    tag="div"
+    timeout="5000"
+    transition="v-snack-transition"
+  >
+    
+  </v-snackbar-stub>
+  <v-layout-stub
+    tag="div"
+    wrap="wrap"
+  >
+    <v-flex-stub
+      class="xs3 mr-3"
+      tag="div"
+    >
+      <v-img-stub
+        options="[object Object]"
+        position="center center"
+        src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png"
+        transition="fade-transition"
+      />
+    </v-flex-stub>
+    <v-flex-stub
+      class="xs6"
+      tag="div"
+    >
+      <div
+        class="title"
+      >
+        Chainsaw Man
+      </div>
+      <div
+        class="subtitle-1 mb-6"
+      >
+        Denji is a teenage boy living with a Chainsaw Devil named Pochita. Due to the debt his father left behind, he has been living a rock-bottom life while repaying his debt by harvesting devil corpses with Pochita.
+        <br />
+        <br />
+        
+One day, Denji is betrayed and killed. As his consciousness fades, he makes a contract with Pochita and gets revived as "Chainsaw Man" — a man with a devil's heart.
+        <br />
+        
+
+        <br />
+        
+(Source: Crunchyroll)
+      </div>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4 mb-6"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Action
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4 mb-6"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Comedy
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4 mb-6"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Drama
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4 mb-6"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Horror
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4 mb-6"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Supernatural
+      </v-chip-stub>
+      <div
+        class="subtitle-1 font-weight-bold"
+      >
+        score:
+        <span
+          class="display-2 green--text"
+        >
+           86%
+        </span>
+      </div>
+    </v-flex-stub>
+  </v-layout-stub>
+</div>
+`;
+
+exports[`Anime Detail Page should bookmark page match snapshot, based on current user : null 1`] = `
+<div
+  class="detail-anime"
+>
+  <!---->
+  <v-snackbar-stub
+    contentclass=""
+    tag="div"
+    timeout="5000"
+    transition="v-snack-transition"
+  >
+    
+  </v-snackbar-stub>
+  <v-layout-stub
+    tag="div"
+    wrap="wrap"
+  >
+    <v-flex-stub
+      class="xs3 mr-3"
+      tag="div"
+    >
+      <v-img-stub
+        options="[object Object]"
+        position="center center"
+        src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png"
+        transition="fade-transition"
+      />
+    </v-flex-stub>
+    <v-flex-stub
+      class="xs6"
+      tag="div"
+    >
+      <div
+        class="title"
+      >
+        Chainsaw Man
+      </div>
+      <div
+        class="subtitle-1 mb-6"
+      >
+        Denji is a teenage boy living with a Chainsaw Devil named Pochita. Due to the debt his father left behind, he has been living a rock-bottom life while repaying his debt by harvesting devil corpses with Pochita.
+        <br />
+        <br />
+        
+One day, Denji is betrayed and killed. As his consciousness fades, he makes a contract with Pochita and gets revived as "Chainsaw Man" — a man with a devil's heart.
+        <br />
+        
+
+        <br />
+        
+(Source: Crunchyroll)
+      </div>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4 mb-6"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Action
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4 mb-6"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Comedy
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4 mb-6"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Drama
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4 mb-6"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Horror
+      </v-chip-stub>
+      <v-chip-stub
+        active="true"
+        activeclass=""
+        class="mr-4 mb-6"
+        closeicon="$delete"
+        closelabel="$vuetify.close"
+        filtericon="$complete"
+        tag="span"
+      >
+        Supernatural
+      </v-chip-stub>
+      <div
+        class="subtitle-1 font-weight-bold"
+      >
+        score:
+        <span
+          class="display-2 green--text"
+        >
+           86%
+        </span>
+      </div>
+    </v-flex-stub>
+  </v-layout-stub>
+</div>
+`;

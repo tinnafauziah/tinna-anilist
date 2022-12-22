@@ -48,7 +48,8 @@ export default {
     }),
   },
   async mounted() {
-    if (!this.currentUser) this.$router.push("/");
+    if (!this.currentUser && !localStorage.getItem("token"))
+      this.$router.push("/");
     else {
       this.fetchAnimeBookmarks();
     }

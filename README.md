@@ -4,8 +4,7 @@ The Anilist project by Tinna Fauziah Azhar
 
 ## Reminder
 
-the Anilist authorization only works when the localhost port is 3000, other than that it won't work
-if you want to access bookmark feature it will be better if you use port 3000
+the Anilist authorization in local virtual machine only works when the localhost port is 3000, other than that it won't work.
 
 ## Build Setup
 

@@ -1,6 +1,8 @@
 import flushPromises from 'flush-promises';
 import detail from '~/pages/anime/_id';
 import animeMock from '~/test/mocks/store-mocks/anime-mocks';
+import userMock from '~/test/mocks/store-mocks/user-mocks';
+import View from '~/test/mocks/api-mocks/current-user';
 
 let store;
 const mocks = {
@@ -15,7 +17,7 @@ const mocks = {
   $vuetify: { mobileBreakpoint: {} }
 };
 
-const modules = { ...animeMock };
+const modules = { ...animeMock, ...userMock };
 
 describe('Anime Detail Page', () => {
   const mockPage = () => {
@@ -23,6 +25,12 @@ describe('Anime Detail Page', () => {
     return global.shallowMount(detail, { store, mocks });
   };
   it('should anime detail page match snapshot', async () => {
+    const wrapper = mockPage();
+    await flushPromises();
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it.each([[null], [{ View }]])('should bookmark page match snapshot, based on current user : %s', async (currentUser) => {
+    userMock.users.getters.getCurrentUser.mockReturnValue(currentUser);
     const wrapper = mockPage();
     await flushPromises();
     expect(wrapper.element).toMatchSnapshot();

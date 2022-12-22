@@ -30,7 +30,7 @@
       span &nbsp;
         NuxtLink(to='/') Home page
   template(v-else)
-    v-btn.mb-3(color='teal accent-4', @click='addBookmarkedAnime()') Add to bookmarked
+    v-btn.mb-3(v-if='currentUser', color='teal accent-4', @click='addBookmarkedAnime()') Add to bookmarked
     v-snackbar(v-model="snackbar") {{ snackbarMessage }}
     v-layout(wrap)
       v-flex.xs3.mr-3
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import humanizeAnimeString from "~/mixins/humanize-anime-string";
 import authorize from "~/mixins/authorize";
 
@@ -62,6 +63,11 @@ export default {
       errorMessage: "",
       isLoadingMedia: true,
     };
+  },
+  computed: {
+    ...mapGetters({
+      currentUser: "users/getCurrentUser",
+    }),
   },
   async mounted() {
     this.fetchAnimeDetail();

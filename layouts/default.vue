@@ -37,6 +37,7 @@ export default {
         development:
           "https://anilist.co/api/v2/oauth/authorize?client_id=10461&response_type=token",
       },
+      onlyViewerPages: ["/bookmark/"],
     };
   },
   async mounted() {
@@ -51,6 +52,13 @@ export default {
     }
   },
   methods: {
+    logout() {
+      localStorage.removeItem("token");
+      this.$store.dispatch("users/clearCurrentUser");
+      if (this.onlyViewerPages.includes(this.$route.path)) {
+        this.$router.push("/");
+      }
+    },
     isAuthorizeRoute() {
       return this.$route.path.includes("/authorize");
     },
